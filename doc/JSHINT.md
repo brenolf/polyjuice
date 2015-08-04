@@ -1,7 +1,7 @@
 # JSHint
 
-## Disregarded rules
-These are the rules that are disregarded when assessing a `.jshintrc` file due to the lack of those rules in ESLint.
+## Discarded rules
+These are the rules that are discarded when assessing a `.jshintrc` file due to the lack of those rules in ESLint.
 
 * `enforceall`
 * `maxerr`
