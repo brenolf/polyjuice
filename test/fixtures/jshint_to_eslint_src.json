@@ -1,0 +1,105 @@
+{
+  "browser": true,
+  "browserify": true,
+  "qunit": false,
+  "wsh": true,
+  "yui": true,
+
+  "bitwise": true,
+
+  "camelcase": true,
+
+  "curly": false,
+
+  "eqeqeq": false,
+
+  "forin": true,
+
+  "funcscope": false,
+
+  "immed": true,
+
+  "indent": 4,
+
+  "iterator": false,
+
+  "latedef": true,
+
+  "maxcomplexity": 2,
+
+  "maxdepth": 3,
+
+  "maxlen": 42,
+
+  "maxparams": 10,
+
+  "maxstatements": 4,
+
+  "newcap": true,
+
+  "noarg": true,
+
+  "nocomma": false,
+
+  "noempty": false,
+
+  "nonbsp": false,
+
+  "nonew": true,
+
+  "notypeof": true,
+
+  "quotmark": true,
+
+  "shadow": "outer",
+
+  "strict": true,
+
+  "undef": true,
+
+  "unused": true,
+
+  "varstmt": true,
+
+  "asi": true,
+
+  "debug": true,
+
+  "eqnull": false,
+
+  "evil": false,
+
+  "expr": true,
+
+  "globalstrict": false,
+
+  "laxbreak": true,
+
+  "laxcomma": false,
+
+  "loopfunc": false,
+
+  "multistr": false,
+
+  "noyield": true,
+
+  "plusplus": false,
+
+  "proto": true,
+
+  "scripturl": false,
+
+  "sub": false,
+
+  "supernew": true,
+
+  "validthis": true,
+
+  "withstmt": false,
+
+  "singleGroups": true,
+
+  "es3": true,
+
+  "es5": true
+}

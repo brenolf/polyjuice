@@ -1,0 +1,103 @@
+{
+  "env": {
+    "browser": true,
+    "browserify": true,
+    "qunit": false,
+    "wsh": true,
+    "yui": true
+  },
+
+  "rules": {
+    "no-bitwise": 2,
+
+    "camelcase": 2,
+
+    "curly": 0,
+
+    "eqeqeq": 0,
+
+    "guard-for-in": 2,
+
+    "block-scoped-var": 0,
+
+    "wrap-iife": [2, "any"],
+
+    "indent": 4,
+
+    "no-iterator": 0,
+
+    "no-use-before-define": 2,
+
+    "complexity": 2,
+
+    "max-depth": 3,
+
+    "max-len": 42,
+
+    "max-params": 10,
+
+    "max-statements": 4,
+
+    "new-cap": 2,
+
+    "no-caller": 2,
+
+    "no-sequences": 0,
+
+    "no-empty": 0,
+
+    "no-irregular-whitespace": 0,
+
+    "no-new": 2,
+
+    "valid-typeof": 2,
+
+    "quotes": [2, "single"],
+
+    "no-shadow": [2, {"builtinGlobals": true, "hoist": "all"}],
+
+    "strict": 0,
+
+    "no-undef": 2,
+
+    "no-unused-vars": 2,
+
+    "no-var": 2,
+
+    "semi": [2, "always"],
+
+    "no-debuger": 2,
+
+    "no-eq-null": 0,
+
+    "no-eval": 0,
+
+    "no-unused-expressions": 2,
+
+    "linebreak-style": 2,
+
+    "comma-style": [2, "first"],
+
+    "no-loop-func": 0,
+
+    "no-multi-str": 0,
+
+    "require-yield": 2,
+
+    "no-plusplus": 0,
+
+    "no-proto": 2,
+
+    "no-script-url": 0,
+
+    "dot-notation": 0,
+
+    "no-new-func": 2,
+
+    "no-new-wrappers": 2,
+
+    "no-invalid-this": 2,
+
+    "no-with": 0
+  }
+}
