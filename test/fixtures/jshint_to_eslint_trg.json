@@ -75,7 +75,7 @@
 
     "linebreak-style": 2,
 
-    "comma-style": [2, "last"],
+    "comma-style": [2, "first"],
 
     "no-loop-func": 0,
 
