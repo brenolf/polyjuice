@@ -1,0 +1,17 @@
+{
+  "rule1": "value2",
+  "rule2": false,
+  "rule3": 42,
+  "rule4": false,
+  "rule5": "42",
+  "rule6": "value-for-6",
+  "rule7": "truthy",
+  "rule8": false,
+  "rule9": true,
+  "rule10": false,
+  "rule11": true,
+  "invisible-rule": true,
+  "non-existent-rule": "hello-world",
+  "substitute-rule": true,
+  "extensible-rule": false
+}

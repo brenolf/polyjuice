@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/brenolf/polyjuice",
   "devDependencies": {
+    "argv": "0.0.2",
     "babel": "^5.1.13",
     "chai": "^3.2.0",
     "jscs": "^2.0.0",

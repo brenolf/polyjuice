@@ -4,6 +4,7 @@
   "qunit": false,
   "wsh": true,
   "yui": true,
+  "phantom": true,
 
   "bitwise": true,
 

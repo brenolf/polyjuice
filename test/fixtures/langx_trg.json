@@ -1,0 +1,16 @@
+{
+  "new-rule1.1": "value-x",
+  "new-rule1.2": "value-y",
+  "new-rule2.1": "default-false",
+  "new-rule2.2": "default-false",
+  "new-rule2.3": "default-false",
+  "new-rule3": 42,
+  "new-rule4": "value4-isnt-false",
+  "new-rule5": "value5-is-42",
+  "new-rule6": "value-for-6",
+  "new-rule7": "value-for-truthy-7",
+  "new-rule8": "value-for-falsy-8",
+  "new-rule9": "default-true",
+  "new-rule10": ["extending", "replace-old-value"],
+  "new-rule11": 4242
+}

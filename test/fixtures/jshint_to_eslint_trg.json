@@ -1,11 +1,10 @@
 {
   "env": {
     "browser": true,
-    "browserify": true,
-    "qunit": false,
-    "wsh": true,
-    "yui": true
+    "phantomjs": true
   },
+
+  "globals": {},
 
   "rules": {
     "no-bitwise": 2,
@@ -22,21 +21,21 @@
 
     "wrap-iife": [2, "any"],
 
-    "indent": 4,
+    "indent": [2, 4],
 
     "no-iterator": 0,
 
     "no-use-before-define": 2,
 
-    "complexity": 2,
+    "complexity": [2, 2],
 
-    "max-depth": 3,
+    "max-depth": [2, 3],
 
-    "max-len": 42,
+    "max-len": [2, 42],
 
-    "max-params": 10,
+    "max-params": [2, 10],
 
-    "max-statements": 4,
+    "max-statements": [2, 4],
 
     "new-cap": 2,
 
@@ -76,7 +75,7 @@
 
     "linebreak-style": 2,
 
-    "comma-style": [2, "first"],
+    "comma-style": [2, "last"],
 
     "no-loop-func": 0,
 

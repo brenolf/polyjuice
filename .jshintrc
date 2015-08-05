@@ -25,6 +25,7 @@
     "strict"        : false,
     "globalstrict"  : false,
 
+    "sub"           : true,
     "asi"           : false,
     "boss"          : false,
     "eqeqeq"        : true,
@@ -32,7 +33,7 @@
     "expr"          : false,
     "forin"         : false,
     "latedef"       : true,
-    "loopfunc"      : false,
+    "loopfunc"      : true,
     "noarg"         : true,
     "scripturl"     : false,
     "shadow"        : "inner",
