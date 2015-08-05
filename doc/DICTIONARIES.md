@@ -39,25 +39,25 @@ Using this format you tell the interpreter that you will return an object contai
 ### String
 For rules with the format:
 ```js
-'rule-in-jshin': 'rule-in-eslint'
+'rule-in-jshint': 'rule-in-eslint'
 ```
-Using this format you tell the interpreter that those rules are equivalent. Therefore, using the truth function on the value, it get the corresponding default true/false value from the truth table. I.e. if `'rule-in-jshin': true` is in the source file, `'rule-in-eslint': 2` will be generated.
+Using this format you tell the interpreter that those rules are equivalent. Therefore, using the truth function on the value, it get the corresponding default true/false value from the truth table (or copy it if a number). I.e. if `'rule-in-jshin': true` is in the source file, `'rule-in-eslint': 2` will be generated.
 
 ### Array
 For rules with the format:
 ```js
-'rule-in-jshin': ['rule-in-eslint-1', 'rule-in-eslint-2']
+'rule-in-jshint': ['rule-in-eslint-1', 'rule-in-eslint-2']
 ```
 This will work just as above, applying it to every string in the array.
 
 ### Object
 For rules with the format:
 ```js
-'rule-in-jshin': {
+'rule-in-jshint': {
   _name: 'rule-in-eslint',
   _truthy: function (value) {
-    if (this) {
-      return [2, this, value]
+    if (this.value) {
+      return [2, this.value, value];
     }
 
     return [2, value];
@@ -65,6 +65,8 @@ For rules with the format:
   _falsy: [2, 'never']
 }
 ```
-For objects there are 4 possible keys to be used: `_name`, `_truthy`, `_falsy` and `_test`. The attribute `_name` is mandatory, and is the name in the target language. The attribute `_test`, if given, should be always a function and works much like using a function directly, however, having the context of the function set to the current value of the attribute being set (the one represented by `_name`). The attributes `_truthy` and `_falsy`, if functions, are shorthands for `_test`, since they will only be called after applying the truth function and deciding whether or not the value is to be considered true/false. However, `_truthy` and `_falsy` can also have the content to be applied directly (no need to be functions as `_test`).
+For objects there are 4 possible keys to be used: `_name`, `_truthy`, `_falsy` and `_test`. The attribute `_name` is mandatory, and is the name in the target language. The attribute `_test`, if given, should be always a function and works much like using a function directly; However, they have their context set to an object with a single key `value`, whose value is the current value of the  attribute being set (the one represented by `_name`).
 
-Note that `_test` is always prioritized over `_truthy` and `_falsy`. Also, the interpreter has a FIFS policy. Therefore, if you want to ensure you did not overrode a rule, use the context (`this`) when assessing a value.
+The attributes `_truthy` and `_falsy`, if functions, are shorthands for `_test`, since they will only be called after applying the truth function and deciding whether or not the value is to be considered true/false. However, `_truthy` and `_falsy` can also have the content to be applied directly (no need to be functions as `_test`).
+
+Note that `_test` is always prioritized over `_truthy` and `_falsy`. Also, the interpreter has a FCFS policy. Therefore, if you want to ensure you did not overrode a rule, use the context's value (`this.value`) when assessing a value.

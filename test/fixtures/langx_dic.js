@@ -75,8 +75,8 @@ module.exports = {
   'extensible-rule': {
     _name: 'new-rule10',
     _falsy: function () {
-      if (this) {
-        return ['extending', this];
+      if (this.value) {
+        return ['extending', this.value];
       }
 
       return 'didnt extend';
