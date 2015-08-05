@@ -34,6 +34,6 @@
     "mocha": "^2.2.5"
   },
   "bin": {
-    "polyjuice": "./lib/bin"
+    "polyjuice": "./lib/bin.js"
   }
 }
