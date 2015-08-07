@@ -1,14 +1,14 @@
 module.exports = {
   'rule1': function (value) {
     if (value === 'value1') {
-      return {'new-rule1': 'value-x'}
+      return {'new-rule1': 'value-x'};
     }
 
     if (value === 'value2') {
       return {
         'new-rule1.1': 'value-x',
         'new-rule1.2': 'value-y'
-      }
+      };
     }
   },
 
@@ -82,4 +82,4 @@ module.exports = {
       return 'didnt extend';
     }
   }
-}
+};

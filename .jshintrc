@@ -2,13 +2,7 @@
     "passfail"      : false,
     "maxerr"        : 50,
 
-    "browser"       : true,
-
-    "browserify"    : true,
-    "node"          : false,
-    "rhino"         : false,
-    "couch"         : false,
-    "wsh"           : true,
+    "node"       : true,
 
     "jquery"        : false,
     "prototypejs"   : false,

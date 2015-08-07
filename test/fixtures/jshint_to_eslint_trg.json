@@ -21,7 +21,7 @@
 
     "wrap-iife": [2, "any"],
 
-    "indent": [2, 4],
+    "indent": [2, 4, {"SwitchCase": 1}],
 
     "no-iterator": 0,
 
@@ -65,7 +65,7 @@
 
     "semi": [2, "always"],
 
-    "no-debuger": 2,
+    "no-debugger": 2,
 
     "no-eq-null": 0,
 
