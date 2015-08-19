@@ -1,6 +1,6 @@
 {
   "name": "polyjuice",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A utility to convert JSHint files into ESLint files",
   "main": "./index",
   "scripts": {
