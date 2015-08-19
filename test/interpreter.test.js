@@ -8,7 +8,15 @@ describe('Reader', () => {
   let src = require('./fixtures/langx_src')
   let trg = require('./fixtures/langx_trg')
 
+  let discarded = []
+
+  let result = interpreter(dictionary, src, tb, discarded);
+
   it('converts correctly a whole json file', () => {
-    expect(interpreter(dictionary, src, tb)).to.eql(trg)
+    expect(result).to.eql(trg)
+  })
+
+  it('adds discarded rules to the last parameter', () => {
+    expect(discarded).to.eql(['invisible-rule', 'non-existent-rule'])
   })
 })

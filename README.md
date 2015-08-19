@@ -22,6 +22,8 @@ If installed globally, you can use polyjuice as a command line utility. You must
 
 `$ polyjuice --jshint=.jshintrc --jscs=.jscsrc > .eslintrc`
 
+You can also check which rules have been discarded by adding `--discarded` or `-d` to your command.
+
 ## Contributing
 Contributions are always welcome! If you want to have a better understanding about the conversion files, I encourage you to take a look at [the conversion page](/doc/DICTIONARIES.md). You can also check the rules discarded when [parsing JSCS](/doc/JSCS.md) and when [parsing JSHint](/doc/JSHINT.md).
 
