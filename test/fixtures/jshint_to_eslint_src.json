@@ -1,5 +1,5 @@
 {
-  "browser": true,
+  "browser": true, // comment test
   "browserify": true,
   "qunit": false,
   "wsh": true,

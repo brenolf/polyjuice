@@ -1,16 +1,20 @@
-import {expect} from 'chai'
-const Reader = require('../lib/polyjuice/reader')
+var expect = require('chai').expect
+var Reader = require('../lib/polyjuice/reader')
 
-describe('Reader', () => {
-  let dictionary = require('./fixtures/langx_dic')
-  let fn = arg => (typeof arg === 'number') ? true : (arg ? true : false)
-  let tb = {true: 'default-true', false: 'default-false'}
+describe('Reader', function () {
+  var dictionary = require('./fixtures/langx_dic')
 
-  let reader = new Reader(dictionary, fn, tb)
+  var tb = {true: 'default-true', false: 'default-false'}
 
-  describe('#get', () => {
-    context('when there is no previous content with the key', () => {
-      it('converts correctly an entry', () => {
+  var fn = function (arg) {
+    return (typeof arg === 'number') ? true : (arg ? true : false)
+  };
+
+  var reader = new Reader(dictionary, fn, tb)
+
+  describe('#get', function () {
+    context('when there is no previous content with the key', function () {
+      it('converts correctly an entry', function () {
         expect(reader.get('rule1', 'value2')).to.eql({
           'new-rule1.1': 'value-x',
           'new-rule1.2': 'value-y'
@@ -66,12 +70,12 @@ describe('Reader', () => {
       })
     })
 
-    context('when there is a previous content with the key', () => {
-      before(() => {
+    context('when there is a previous content with the key', function () {
+      before(function () {
         reader.current = {'new-rule10': 'an-old-value'}
       })
 
-      it('converts correctly an entry', () => {
+      it('converts correctly an entry', function () {
         expect(reader.get('substitute-rule', true)).to.be.eql({
           'new-rule10': 'replace-old-value'
         })

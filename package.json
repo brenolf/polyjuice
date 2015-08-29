@@ -4,7 +4,7 @@
   "description": "A utility to convert JSHint files into ESLint files",
   "main": "./index",
   "scripts": {
-    "test": "mocha --reporter dot --compilers js:babel/register 'test/**/*.test.js'",
+    "test": "mocha --reporter dot 'test/**/*.test.js'",
     "style": "jshint --reporter=node_modules/jshint-stylish lib/**/*.js; jscs lib/**/*.js; exit 0;"
   },
   "repository": {
@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/brenolf/polyjuice",
   "devDependencies": {
-    "babel": "^5.1.13",
     "chai": "^3.2.0",
     "jscs": "^2.0.0",
     "jshint": "^2.8.0",
@@ -37,6 +36,7 @@
     "polyjuice": "./lib/bin.js"
   },
   "dependencies": {
-    "argv": "0.0.2"
+    "argv": "0.0.2",
+    "strip-json-comments": "^1.0.4"
   }
 }
