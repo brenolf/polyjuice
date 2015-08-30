@@ -3,37 +3,37 @@ var jshint = require('../../lib/dictionaries/jshint')
 
 describe('jshint', function () {
   it('converts maxcomplexity correctly', function () {
-    var maxcomplexity = jshint.maxcomplexity._truthy;
+    var maxcomplexity = jshint.maxcomplexity.truthy;
 
     expect(maxcomplexity(42)).to.eql([2, 42])
   })
 
   it('converts maxdepth correctly', function () {
-    var maxdepth = jshint.maxdepth._truthy;
+    var maxdepth = jshint.maxdepth.truthy;
 
     expect(maxdepth(42)).to.eql([2, 42])
   })
 
   it('converts maxlen correctly', function () {
-    var maxlen = jshint.maxlen._truthy;
+    var maxlen = jshint.maxlen.truthy;
 
     expect(maxlen(42)).to.eql([2, 42])
   })
 
   it('converts maxparams correctly', function () {
-    var maxparams = jshint.maxparams._truthy;
+    var maxparams = jshint.maxparams.truthy;
 
     expect(maxparams(42)).to.eql([2, 42])
   })
 
   it('converts maxstatements correctly', function () {
-    var maxstatements = jshint.maxstatements._truthy;
+    var maxstatements = jshint.maxstatements.truthy;
 
     expect(maxstatements(42)).to.eql([2, 42])
   })
 
   it('converts shadow correctly', function () {
-    var shadow = jshint.shadow._test;
+    var shadow = jshint.shadow.test;
 
     expect(shadow(true)).to.eql(0)
 
