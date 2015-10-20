@@ -75,3 +75,15 @@ Since Polyjuice has a FCFS policy for transpiling, the context provided for `tes
 The attributes `truthy` and `falsy`, if functions, are shorthands for `test` because they will only be called after applying the truth function and deciding whether or not the value is to be considered true/false. However, `truthy` and `falsy` can also have the content to be applied directly (no need to be functions as `test`).
 
 Note that `test` is always prioritized over `truthy` and `falsy`. Also mind the interpreter's FCFS policy when implementing a translation.
+
+#### ESLint attributes
+
+When converting from ESLint, the object has to contain the `target` library it's converting to. ESLint conversions returns an object whose keys are the targets read when transpiling a file. For instance:
+
+```js
+'rule-in-eslint': {
+  target: 'jshint',
+  name: 'rule-in-jshint',
+  truthy: true
+}
+```
