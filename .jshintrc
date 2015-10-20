@@ -2,12 +2,26 @@
     "passfail"      : false,
     "maxerr"        : 50,
 
-    "node"       : true,
-
     "jquery"        : false,
     "prototypejs"   : false,
     "mootools"      : false,
     "dojo"          : false,
+    "mocha"         : true,
+
+    "globals"        : {
+      "async": true,
+      "await": true,
+      "use": true,
+      "process": true,
+      "require": true,
+      "module": true,
+      "global": true,
+      "sinon": true,
+      "expect": true,
+      "Factories": true,
+      "Factory": true,
+      "__dirname": true
+    },
 
     "laxbreak"      : true,
     "laxcomma"      : true,
@@ -17,17 +31,18 @@
 
     "esnext"        : true,
     "strict"        : false,
-    "globalstrict"  : false,
+    "globalstrict"  : true,
 
-    "sub"           : true,
-    "asi"           : false,
+    "noyield"       : true,
+
+    "asi"           : true,
     "boss"          : false,
     "eqeqeq"        : true,
     "evil"          : false,
-    "expr"          : false,
+    "expr"          : true,
     "forin"         : false,
     "latedef"       : true,
-    "loopfunc"      : true,
+    "loopfunc"      : false,
     "noarg"         : true,
     "scripturl"     : false,
     "shadow"        : "inner",
@@ -35,6 +50,6 @@
     "unused"        : true,
     "undef"         : true,
     "freeze"        : true,
-    "maxdepth"      : 3,
-    "maxparams"     : 4
+    "maxdepth"      : 2,
+    "maxparams"     : 7
 }

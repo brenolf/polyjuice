@@ -1,4 +1,3 @@
-var expect = require('chai').expect
 var Reader = require('../lib/polyjuice/reader')
 
 describe('Reader', function () {
@@ -8,7 +7,7 @@ describe('Reader', function () {
 
   var fn = function (arg) {
     return (typeof arg === 'number') ? true : (arg ? true : false)
-  };
+  }
 
   var reader = new Reader(dictionary, fn, tb)
 

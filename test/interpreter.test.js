@@ -1,5 +1,4 @@
 var interpreter = require('../lib/polyjuice/interpreter')
-var expect = require('chai').expect
 
 describe('Reader', function () {
   var dictionary = require('./fixtures/langx_dic')

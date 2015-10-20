@@ -8,14 +8,14 @@ The truth function is currently default for all languages, and its implementatio
 ```js
 var fn = function (input) {
   if (typeof input === 'number') {
-    return true;
+    return true
   }
 
-  return input ? true : false;
-};
+  return input ? true : false
+}
 ```
 
-It tells that if the value of the rule is a number, then it is considered true; otherwise it is true based on JavaScript existence test. An example of a truth table is shown below.
+It tells that if the value of the rule is a number, then it is considered true otherwise it is true based on JavaScript existence test. An example of a truth table is shown below.
 
 ```json
 {
@@ -30,7 +30,7 @@ It tells that if the value of the rule is a number, then it is considered true; 
 
 ```js
 'rule-in-jshint': function (value) {
-  return { 'rule-in-eslint': [2, value] };
+  return { 'rule-in-eslint': [2, value] }
 }
 ```
 
@@ -59,16 +59,16 @@ This will work just as above, applying it to every string in the array.
   name: 'rule-in-eslint',
   truthy: function (value) {
     if (this.value) {
-      return [2, this.value, value];
+      return [2, this.value, value]
     }
 
-    return [2, value];
+    return [2, value]
   },
   falsy: [2, 'never']
 }
 ```
 
-For objects there are 4 possible keys to be used: `name`, `truthy`, `falsy` and `test`. The attribute `name` is **mandatory**; it is the name in the target language. The attribute `test`, if given, should be always a function and works much like using a function directly, but having their context set to an object with a single key `value`, whose value is the current value of the  attribute being set (the one represented by `name`).
+For objects there are 4 possible keys to be used: `name`, `truthy`, `falsy` and `test`. The attribute `name` is **mandatory** it is the name in the target language. The attribute `test`, if given, should be always a function and works much like using a function directly, but having their context set to an object with a single key `value`, whose value is the current value of the  attribute being set (the one represented by `name`).
 
 Since Polyjuice has a FCFS policy for transpiling, the context provided for `test` plays an important rule on it. For instance, there could be a scenario where multiple options can be applied to the same rule and they are non-overlapping. Thus, you could find the context's values useful in order to preserve the previously applied rules.
 

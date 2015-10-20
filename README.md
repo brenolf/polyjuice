@@ -1,4 +1,7 @@
-# Polyjuice [![Build Status](https://travis-ci.org/brenolf/polyjuice.svg)](https://travis-ci.org/brenolf/polyjuice) [![npm version](https://badge.fury.io/js/polyjuice.svg)](http://badge.fury.io/js/polyjuice)
+# Polyjuice
+
+[![Build Status](https://travis-ci.org/brenolf/polyjuice.svg)](https://travis-ci.org/brenolf/polyjuice)
+[![Coverage Status](https://coveralls.io/repos/brenolf/polyjuice/badge.svg?branch=master&service=github)](https://coveralls.io/github/brenolf/polyjuice?branch=master) [![npm version](https://badge.fury.io/js/polyjuice.svg)](http://badge.fury.io/js/polyjuice)
 > Converts `.jshintrc` and `.jscs` files into `.eslintrc`
 
 Polyjuice is a utility that converts [JSHint](http://jshint.com/) and [JSCS](http://jscs.info/) files into [ESLint](http://eslint.org/) files.
@@ -8,7 +11,7 @@ Polyjuice is a utility that converts [JSHint](http://jshint.com/) and [JSCS](htt
 
 ## Usage
 ```js
-var polyjuice = require('polyjuice');
+var polyjuice = require('polyjuice')
 
 var eslint_json = {
   jshint: polyjuice.from.jshint('./.jshintrc'),
@@ -20,7 +23,7 @@ var eslint_json = {
 ## CLI
 If installed globally, you can use polyjuice as a command line utility. You must provide the files to be assessed by using the options `--jshint` and `--jscs`, for instance:
 
-`$ polyjuice --jshint=.jshintrc --jscs=.jscsrc > .eslintrc`
+`$ polyjuice --jshint .jshintrc --jscs .jscsrc > .eslintrc`
 
 You can also check which rules have been discarded by adding `--discarded` or `-d` to your command.
 
