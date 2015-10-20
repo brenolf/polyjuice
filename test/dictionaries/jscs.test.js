@@ -1,14 +1,6 @@
 var jscs = require('../../lib/dictionaries/jscs')
 
-var getFn = function (name, scope) {
-  var fn = (typeof jscs[name] === 'function') ? jscs[name] : jscs[name].truthy
-
-  if (scope !== undefined) {
-    return getFn(name).bind({ value: scope })
-  }
-
-  return fn
-}
+var getFn = caller(jscs)
 
 describe('jscs', function () {
   it('converts disallowIdentifierNames correctly', function () {

@@ -9,18 +9,11 @@
     "mocha"         : true,
 
     "globals"        : {
-      "async": true,
-      "await": true,
-      "use": true,
-      "process": true,
       "require": true,
       "module": true,
       "global": true,
-      "sinon": true,
       "expect": true,
-      "Factories": true,
-      "Factory": true,
-      "__dirname": true
+      "caller": true
     },
 
     "laxbreak"      : true,
