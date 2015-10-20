@@ -1,4 +1,10 @@
-# Polyjuice
+<h1 align="center">
+	<br>
+	<img width="500" src="./logo.png" alt="Polyjuice">
+	<br>
+	<br>
+	<br>
+</h1>
 
 [![Build Status](https://travis-ci.org/brenolf/polyjuice.svg)](https://travis-ci.org/brenolf/polyjuice)
 [![Coverage Status](https://coveralls.io/repos/brenolf/polyjuice/badge.svg?branch=master&service=github)](https://coveralls.io/github/brenolf/polyjuice?branch=master) [![npm version](https://badge.fury.io/js/polyjuice.svg)](http://badge.fury.io/js/polyjuice)
