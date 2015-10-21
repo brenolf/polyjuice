@@ -7,7 +7,9 @@
 </h1>
 
 [![Build Status](https://travis-ci.org/brenolf/polyjuice.svg)](https://travis-ci.org/brenolf/polyjuice)
-[![Coverage Status](https://coveralls.io/repos/brenolf/polyjuice/badge.svg?branch=master&service=github)](https://coveralls.io/github/brenolf/polyjuice?branch=master) [![npm version](https://badge.fury.io/js/polyjuice.svg)](http://badge.fury.io/js/polyjuice)
+[![Coverage Status](https://coveralls.io/repos/brenolf/polyjuice/badge.svg?branch=master&service=github)](https://coveralls.io/github/brenolf/polyjuice?branch=master)
+[![Code Climate](https://codeclimate.com/github/brenolf/polyjuice/badges/gpa.svg)](https://codeclimate.com/github/brenolf/polyjuice)
+[![npm version](https://badge.fury.io/js/polyjuice.svg)](http://badge.fury.io/js/polyjuice)
 > Converts `.jshintrc` and `.jscs` files into `.eslintrc`
 
 Polyjuice is a utility that converts [JSHint](http://jshint.com/) and [JSCS](http://jscs.info/) files into [ESLint](http://eslint.org/) files.
