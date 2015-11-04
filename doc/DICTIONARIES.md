@@ -1,7 +1,7 @@
 # Dictionaries
 Polyjuice uses JavaScript objects to find a proper translation for a given rule. The object has the rule name to be translated as key and variable options as its value.
 
-Basically, there is a truth function that will be used to test the value of the rule to be translated,  and then its output is going to be matched against a truth table of default values of the destination tool.
+Basically, there is a truth function that will be used to test the value of the rule to be translated, and then its output is going to be matched against a truth table of default values of the destination tool.
 
 The truth function is currently default for all languages, and its implementation is as follows.
 
