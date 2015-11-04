@@ -10,8 +10,8 @@ global.caller = function (lib) {
              ? lib[name]
              : (lib[name].truthy || lib[name].test)
 
-    if (scope !== undefined) {
-      return caller(lib)(name).bind({ value: scope })
+    if (scope) {
+      return fn.bind({ value: scope })
     }
 
     return fn
