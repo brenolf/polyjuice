@@ -360,7 +360,7 @@ describe('eslint', function () {
     expect(fn(0)).to.eql({})
   })
 
-  it.skip('converts quote-props correctly', function () {
+  it('converts quote-props correctly', function () {
     var fn = getFn('quote-props')
 
     expect(fn([2, "as-needed"])).to.eql({
@@ -545,27 +545,27 @@ describe('eslint', function () {
     expect(fn([0])).to.eql({ disallowParenthesesAroundArrowParam: true })
   })
 
-  it.skip('converts max-depth correctly', function () {
+  it('converts max-depth correctly', function () {
     var fn = getFn('max-depth')
 
-    expect(fn()).to.eql()
+    expect(fn([2, 42])).to.eql(42)
   })
 
-  it.skip('converts max-len correctly', function () {
+  it('converts max-len correctly', function () {
     var fn = getFn('max-len')
 
-    expect(fn()).to.eql()
+    expect(fn([2, 42])).to.eql(42)
   })
 
-  it.skip('converts max-params correctly', function () {
+  it('converts max-params correctly', function () {
     var fn = getFn('max-params')
 
-    expect(fn()).to.eql()
+    expect(fn([2, 42])).to.eql(42)
   })
 
-  it.skip('converts max-statements correctly', function () {
+  it('converts max-statements correctly', function () {
     var fn = getFn('max-statements')
 
-    expect(fn()).to.eql()
+    expect(fn([2, 42])).to.eql(42)
   })
 })
