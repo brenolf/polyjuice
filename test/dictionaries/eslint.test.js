@@ -421,10 +421,30 @@ describe('eslint', function () {
     expect(fn([0])).to.eql({})
   })
 
-  it.skip('converts space-after-keywords correctly', function () {
+  it('converts space-after-keywords correctly', function () {
     var fn = getFn('space-after-keywords')
+    var fnContext = getFn('space-after-keywords', ['a', 'b'])
 
-    expect(fn()).to.eql()
+    var keywords = ['do', 'for', 'if', 'else', 'switch', 'try', 'catch',
+      'finally', 'void', 'while', 'with', 'typeof', 'function']
+
+    expect(fn(0)).to.eql({})
+
+    expect(fn([2, 'always'])).to.eql({
+      requireSpaceAfterKeywords: keywords
+    })
+
+    expect(fn([2, 'never'])).to.eql({
+      disallowSpaceAfterKeywords: keywords
+    })
+
+    expect(fnContext([2, 'always'])).to.eql({
+      requireSpaceAfterKeywords: ['a', 'b'].concat(keywords)
+    })
+
+    expect(fnContext([2, 'never'])).to.eql({
+      disallowSpaceAfterKeywords: ['a', 'b'].concat(keywords)
+    })
   })
 
   it.skip('converts space-before-blocks correctly', function () {
@@ -445,10 +465,29 @@ describe('eslint', function () {
     expect(fn()).to.eql()
   })
 
-  it.skip('converts space-return-throw-case correctly', function () {
+  it('converts space-return-throw-case correctly', function () {
     var fn = getFn('space-return-throw-case')
+    var fnContext = getFn('space-return-throw-case', ['a', 'b'])
 
-    expect(fn()).to.eql()
+    var keywords = ['return', 'throw', 'case']
+
+    expect(fn(0)).to.eql({})
+
+    expect(fn([2, 'always'])).to.eql({
+      requireSpaceAfterKeywords: keywords
+    })
+
+    expect(fn([2, 'never'])).to.eql({
+      disallowSpaceAfterKeywords: keywords
+    })
+
+    expect(fnContext([2, 'always'])).to.eql({
+      requireSpaceAfterKeywords: ['a', 'b'].concat(keywords)
+    })
+
+    expect(fnContext([2, 'never'])).to.eql({
+      disallowSpaceAfterKeywords: ['a', 'b'].concat(keywords)
+    })
   })
 
   it.skip('converts space-unary-ops correctly', function () {
