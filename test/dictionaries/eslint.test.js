@@ -447,10 +447,18 @@ describe('eslint', function () {
     })
   })
 
-  it.skip('converts space-before-blocks correctly', function () {
+  it('converts space-before-blocks correctly', function () {
     var fn = getFn('space-before-blocks')
 
-    expect(fn()).to.eql()
+    expect(fn([2, 'always'])).to.eql({
+      requireSpaceBeforeBlockStatements: true
+    })
+
+    expect(fn([2, 'never'])).to.eql({
+      disallowSpaceBeforeBlockStatements: true
+    })
+
+    expect(fn([0])).to.eql({})
   })
 
   it.skip('converts space-before-function-paren correctly', function () {
