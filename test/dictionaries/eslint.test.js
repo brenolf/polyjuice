@@ -272,10 +272,18 @@ describe('eslint', function () {
     expect(fn([0])).to.eql({})
   })
 
-  it.skip('converts new-cap correctly', function () {
+  it('converts new-cap correctly', function () {
     var fn = getFn('new-cap')
 
-    expect(fn()).to.eql()
+    expect(fn(2)).to.eql(true)
+
+    expect(fn([2, {"capIsNewExceptions": ["Person"]}])).to.eql({
+      allExcept: ['Person']
+    })
+
+    expect(fn([2, {"capIsNewExceptions": ["foo.Person"]}])).to.eql({
+      allExcept: ['foo.Person']
+    })
   })
 
   it.skip('converts newline-after-var correctly', function () {
