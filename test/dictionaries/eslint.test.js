@@ -537,10 +537,12 @@ describe('eslint', function () {
     expect(fn([0])).to.eql({ disallowSpaceAfterPrefixUnaryOperators: true })
   })
 
-  it.skip('converts arrow-parens correctly', function () {
+  it('converts arrow-parens correctly', function () {
     var fn = getFn('arrow-parens')
 
-    expect(fn()).to.eql()
+    expect(fn([2])).to.eql({ requireParenthesesAroundArrowParam: true })
+
+    expect(fn([0])).to.eql({ disallowParenthesesAroundArrowParam: true })
   })
 
   it.skip('converts max-depth correctly', function () {
