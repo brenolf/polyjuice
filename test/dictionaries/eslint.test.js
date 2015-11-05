@@ -461,10 +461,22 @@ describe('eslint', function () {
     expect(fn([0])).to.eql({})
   })
 
-  it.skip('converts space-before-function-paren correctly', function () {
+  it('converts space-before-function-paren correctly', function () {
     var fn = getFn('space-before-function-paren')
 
-    expect(fn()).to.eql()
+    expect(fn([2, 'always'])).to.eql({
+      requireSpacesInFunctionDeclaration: true,
+      requireSpacesInFunctionExpression: true
+    })
+
+    expect(fn([2, 'never'])).to.eql({
+      disallowSpacesInFunctionDeclaration: true,
+      disallowSpacesInFunctionExpression: true,
+      disallowSpacesInFunction: true,
+      disallowSpacesInNamedFunctionExpression: true
+    })
+
+    expect(fn([0])).to.eql({})
   })
 
   it.skip('converts space-in-parens correctly', function () {
