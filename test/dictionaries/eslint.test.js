@@ -409,10 +409,14 @@ describe('eslint', function () {
     expect(fn(0)).to.eql({})
   })
 
-  it.skip('converts semi correctly', function () {
+  it('converts semi correctly', function () {
     var fn = getFn('semi')
 
-    expect(fn()).to.eql()
+    expect(fn([2, 'always'])).to.eql({ requireSemicolons: true })
+
+    expect(fn([2, 'never'])).to.eql({ disallowSemicolons: true })
+
+    expect(fn([0])).to.eql({})
   })
 
   it.skip('converts space-after-keywords correctly', function () {
