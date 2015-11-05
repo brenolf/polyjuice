@@ -310,10 +310,24 @@ describe('eslint', function () {
     expect(fn([2, { "skipBlankLines": true }])).to.eql('ignoreEmptyLines')
   })
 
-  it.skip('converts one-var correctly', function () {
+  it('converts one-var correctly', function () {
     var fn = getFn('one-var')
 
-    expect(fn()).to.eql()
+    expect(fn([2, 'never'])).to.eql({
+      disallowMultipleVarDecl: true,
+      requireMultipleVarDecl: true
+    })
+
+    expect(fn([1, 'never'])).to.eql({
+      disallowMultipleVarDecl: true,
+      requireMultipleVarDecl: true
+    })
+
+    expect(fn([2])).to.eql({ disallowMultipleVarDecl: true })
+
+    expect(fn(2)).to.eql({ disallowMultipleVarDecl: true })
+
+    expect(fn(0)).to.eql({})
   })
 
   it.skip('converts operator-linebreak correctly', function () {
