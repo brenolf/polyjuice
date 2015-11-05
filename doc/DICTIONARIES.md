@@ -1,7 +1,7 @@
 # Dictionaries
 Polyjuice uses JavaScript objects to find a proper translation for a given rule. The object has the rule name to be translated as key and variable options as its value.
 
-Basically, there is a truth function that will be used to test the value of the rule to be translated,  and then its output is going to be matched against a truth table of default values of the destination tool.
+Basically, there is a truth function that will be used to test the value of the rule to be translated, and then its output is going to be matched against a truth table of default values of the destination tool.
 
 The truth function is currently default for all languages, and its implementation is as follows.
 
@@ -68,10 +68,22 @@ This will work just as above, applying it to every string in the array.
 }
 ```
 
-For objects there are 4 possible keys to be used: `name`, `truthy`, `falsy` and `test`. The attribute `name` is **mandatory** it is the name in the target language. The attribute `test`, if given, should be always a function and works much like using a function directly, but having their context set to an object with a single key `value`, whose value is the current value of the  attribute being set (the one represented by `name`).
+For objects there are 4 possible keys to be used: `name`, `truthy`, `falsy`, `eval` and `test`. The attribute `name` is **mandatory** it is the name in the target language. The attribute `test`, if given, should be always a function and works much like using a function directly, but having their context set to an object with a single key `value`, whose value is the current value of the  attribute being set (the one represented by `name`). The attribute `eval`, if given, should be a function that returns an object with the keys do be added, just like using it directly as a function. It is useful when there are more things you take into account (like ESLint conversion).
 
-Since Polyjuice has a FCFS policy for transpiling, the context provided for `test` plays an important rule on it. For instance, there could be a scenario where multiple options can be applied to the same rule and they are non-overlapping. Thus, you could find the context's values useful in order to preserve the previously applied rules.
+Since Polyjuice has a FCFS policy for transpiling, the context provided for both `test` and `eval` plays an important rule on it. For instance, there could be a scenario where multiple options can be applied to the same rule and they are non-overlapping. Thus, you could find the context's values useful in order to preserve the previously applied rules.
 
 The attributes `truthy` and `falsy`, if functions, are shorthands for `test` because they will only be called after applying the truth function and deciding whether or not the value is to be considered true/false. However, `truthy` and `falsy` can also have the content to be applied directly (no need to be functions as `test`).
 
-Note that `test` is always prioritized over `truthy` and `falsy`. Also mind the interpreter's FCFS policy when implementing a translation.
+Bear in mind that the function priority is `eval > test > truthy/falsy`. Also mind the interpreter's FCFS policy when implementing a translation.
+
+#### ESLint attributes
+
+When converting from ESLint, the object has to contain the `target` library it's converting to. ESLint conversions returns an object whose keys are the targets read when transpiling a file. For instance:
+
+```js
+'rule-in-eslint': {
+  target: 'jshint',
+  name: 'rule-in-jshint',
+  truthy: true
+}
+```

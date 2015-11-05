@@ -157,9 +157,9 @@ describe('jscs', function () {
       [2, 'never', {}]
     )
 
-    expect(fn(true)).to.eql([2, 'always', {'singleValue': true}])
+    expect(fn(true)).to.eql([2, 'never', {'singleValue': true}])
 
-    expect(fn('nested')).to.eql([2, 'always', {
+    expect(fn('nested')).to.eql([2, 'never', {
       'singleValue': true,
       'arraysInArrays': true
     }])
@@ -174,9 +174,9 @@ describe('jscs', function () {
       [2, 'never', {}]
     )
 
-    expect(fn(true)).to.eql([2, 'always', {'singleValue': true}])
+    expect(fn(true)).to.eql([2, 'never', {'singleValue': true}])
 
-    expect(fn('nested')).to.eql([2, 'always', {
+    expect(fn('nested')).to.eql([2, 'never', {
       'singleValue': true,
       'objectsInArrays': true
     }])
