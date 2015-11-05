@@ -380,10 +380,33 @@ describe('eslint', function () {
     expect(fn(0)).to.eql({})
   })
 
-  it.skip('converts quotes correctly', function () {
+  it('converts quotes correctly', function () {
     var fn = getFn('quotes')
 
-    expect(fn()).to.eql()
+    expect(fn([2, 'backtick'])).to.eql({
+      requireTemplateStrings: true
+    })
+
+    expect(fn([2, 'double'])).to.eql({
+      validateQuoteMarks: '"'
+    })
+
+    expect(fn([2, 'single'])).to.eql({
+      validateQuoteMarks: '\''
+    })
+
+    expect(fn([2, 'single', 'avoid-escape'])).to.eql({
+      validateQuoteMarks: {
+        mark: '\'',
+        escape: true
+      }
+    })
+
+    expect(fn(2)).to.eql({
+      validateQuoteMarks: '\''
+    })
+
+    expect(fn(0)).to.eql({})
   })
 
   it.skip('converts semi correctly', function () {
