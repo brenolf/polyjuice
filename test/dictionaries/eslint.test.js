@@ -110,9 +110,9 @@ describe('eslint', function () {
   it('converts no-shadow correctly', function () {
     var fn = getFn('no-shadow')
 
-    expect(fn(2)).to.eql(false)
-    expect(fn(0)).to.eql(true)
-    expect(fn([2, {}])).to.eql('outer')
+    expect(fn(2)).to.eql({ shadow: false })
+    expect(fn(0)).to.eql({ shadow: true })
+    expect(fn([2, {}])).to.eql({ shadow: 'outer' })
   })
 
   it('converts array-bracket-spacing correctly', function () {
@@ -217,10 +217,39 @@ describe('eslint', function () {
     expect(fn([2, 2])).to.eql(2)
   })
 
-  it.skip('converts key-spacing correctly', function () {
+  it('converts key-spacing correctly', function () {
     var fn = getFn('key-spacing')
 
-    expect(fn()).to.eql()
+    expect(fn([2, { "align": "colon" }])).to.eql({
+      requireAlignedObjectValues: true,
+      disallowSpaceAfterObjectKeys: {
+        allExcept: ['aligned']
+      }
+    })
+
+    expect(fn(
+      [2, { "align": "colon", "beforeColon": true, "afterColon": false }]
+    )).to.eql({
+      requireAlignedObjectValues: true,
+      disallowSpaceAfterObjectKeys: {
+        allExcept: ['aligned']
+      }
+    })
+
+    expect(fn([2, {"beforeColon": true, "afterColon": true}])).to.eql({
+      requireSpaceAfterObjectKeys: true,
+      requireSpaceBeforeObjectValues: true
+    })
+
+    expect(fn([2, {"beforeColon": false, "afterColon": false}])).to.eql({
+      disallowSpaceBeforeObjectValues: true,
+      disallowSpaceAfterObjectKeys: true
+    })
+
+    expect(fn([2, {"beforeColon": true, "afterColon": false}])).to.eql({
+      requireSpaceAfterObjectKeys: true,
+      disallowSpaceBeforeObjectValues: true
+    })
   })
 
   it.skip('converts linebreak-style correctly', function () {
