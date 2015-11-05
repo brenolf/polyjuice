@@ -259,10 +259,17 @@ describe('eslint', function () {
     expect(fn([2, 'unix'])).to.eql('LF')
   })
 
-  it.skip('converts lines-around-comment correctly', function () {
+  it('converts lines-around-comment correctly', function () {
     var fn = getFn('lines-around-comment')
 
-    expect(fn()).to.eql()
+    var result = {
+      requirePaddingNewLinesBeforeLineComments: true,
+      requireSpaceAfterLineComment: true
+    }
+
+    expect(fn(2)).to.eql(result)
+    expect(fn([2, 'x'])).to.eql(result)
+    expect(fn([0])).to.eql({})
   })
 
   it.skip('converts new-cap correctly', function () {
