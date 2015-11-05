@@ -302,10 +302,12 @@ describe('eslint', function () {
     })
   })
 
-  it.skip('converts no-trailing-spaces correctly', function () {
+  it('converts no-trailing-spaces correctly', function () {
     var fn = getFn('no-trailing-spaces')
 
-    expect(fn()).to.eql()
+    expect(fn([2])).to.eql(true)
+
+    expect(fn([2, { "skipBlankLines": true }])).to.eql('ignoreEmptyLines')
   })
 
   it.skip('converts one-var correctly', function () {
