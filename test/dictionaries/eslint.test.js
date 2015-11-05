@@ -330,10 +330,18 @@ describe('eslint', function () {
     expect(fn(0)).to.eql({})
   })
 
-  it.skip('converts operator-linebreak correctly', function () {
+  it('converts operator-linebreak correctly', function () {
     var fn = getFn('operator-linebreak')
 
-    expect(fn()).to.eql()
+    expect(fn([2, 'before'])).to.eql(
+      { disallowOperatorBeforeLineBreak: true }
+    )
+
+    expect(fn([2, 'after'])).to.eql(
+      { requireOperatorBeforeLineBreak: true }
+    )
+
+    expect(fn(0)).to.eql({})
   })
 
   it.skip('converts padded-blocks correctly', function () {
