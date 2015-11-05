@@ -286,10 +286,20 @@ describe('eslint', function () {
     })
   })
 
-  it.skip('converts newline-after-var correctly', function () {
+  it('converts newline-after-var correctly', function () {
     var fn = getFn('newline-after-var')
 
-    expect(fn()).to.eql()
+    expect(fn(0)).to.eql({})
+
+    expect(fn([1, 'always'])).to.eql({
+      requireLineBreakAfterVariableAssignment: true,
+      requirePaddingNewLineAfterVariableDeclaration: true
+    })
+
+    expect(fn(2)).to.eql({
+      requireLineBreakAfterVariableAssignment: true,
+      requirePaddingNewLineAfterVariableDeclaration: true
+    })
   })
 
   it.skip('converts no-trailing-spaces correctly', function () {
