@@ -479,10 +479,29 @@ describe('eslint', function () {
     expect(fn([0])).to.eql({})
   })
 
-  it.skip('converts space-in-parens correctly', function () {
+  it('converts space-in-parens correctly', function () {
     var fn = getFn('space-in-parens')
 
-    expect(fn()).to.eql()
+    expect(fn([2, 'always'])).to.eql({
+      requireSpacesInsideParentheses: 'all'
+    })
+
+    expect(fn([2, 'never'])).to.eql({
+      disallowSpacesInsideParentheses: true
+    })
+
+    expect(fn(0)).to.eql({})
+
+    expect(fn([2, 'never', { exceptions: ["[]"] }])).to.eql({
+      disallowSpacesInsideParentheses: { only: [ "[", "]" ] }
+    })
+
+    expect(fn([2, 'always', { exceptions: ["{}"] }])).to.eql({
+      requireSpacesInsideParentheses: {
+        all: true,
+        except: [ "{", "}" ]
+      }
+    })
   })
 
   it('converts space-return-throw-case correctly', function () {
