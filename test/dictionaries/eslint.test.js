@@ -361,7 +361,23 @@ describe('eslint', function () {
   it.skip('converts quote-props correctly', function () {
     var fn = getFn('quote-props')
 
-    expect(fn()).to.eql()
+    expect(fn([2, "as-needed"])).to.eql({
+      disallowQuotedKeysInObjects: true
+    })
+
+    expect(fn([2, "always"])).to.eql({
+      requireQuotedKeysInObjects: true
+    })
+
+    expect(fn([2, "as-needed", { "keywords": true }])).to.eql({
+      disallowQuotedKeysInObjects: 'allButReserved'
+    })
+
+    expect(fn(2)).to.eql({
+      requireQuotedKeysInObjects: true
+    })
+
+    expect(fn(0)).to.eql({})
   })
 
   it.skip('converts quotes correctly', function () {
