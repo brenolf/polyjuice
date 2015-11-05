@@ -344,10 +344,18 @@ describe('eslint', function () {
     expect(fn(0)).to.eql({})
   })
 
-  it.skip('converts padded-blocks correctly', function () {
+  it('converts padded-blocks correctly', function () {
     var fn = getFn('padded-blocks')
 
-    expect(fn()).to.eql()
+    expect(fn([2, 'never'])).to.eql(
+      { disallowPaddingNewlinesInBlocks: true }
+    )
+
+    expect(fn([2, 'always'])).to.eql(
+      { requirePaddingNewlinesInBlocks: true }
+    )
+
+    expect(fn(0)).to.eql({})
   })
 
   it.skip('converts quote-props correctly', function () {
