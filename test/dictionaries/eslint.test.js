@@ -67,11 +67,11 @@ describe('eslint', function () {
     var fn = getFn('no-warning-comments')
 
     expect(fn(
-      [2, { "terms": ["todo", "fixme", "any"], "location": "anywhere" }]
-    )).to.eql(["todo", "fixme", "any"])
+      [2, { 'terms': ['todo', 'fixme', 'any'], 'location': 'anywhere' }]
+    )).to.eql(['todo', 'fixme', 'any'])
 
     expect(fn(
-      [1, { "location": "anywhere" }]
+      [1, { 'location': 'anywhere' }]
     )).to.eql([])
   })
 
@@ -118,20 +118,20 @@ describe('eslint', function () {
   it('converts array-bracket-spacing correctly', function () {
     var fn = getFn('array-bracket-spacing')
 
-    expect(fn([2, "never"])).to.eql({
+    expect(fn([2, 'never'])).to.eql({
       disallowSpacesInsideArrayBrackets: true,
       disallowSpacesInsideObjectBrackets: true
     })
 
-    expect(fn([2, "always"])).to.eql({
+    expect(fn([2, 'always'])).to.eql({
       requireSpacesInsideArrayBrackets: true,
       requireSpacesInsideObjectBrackets: true
     })
 
-    var result = fn([2, "never", {
-      "singleValue": true,
-      "objectsInArrays": true,
-      "arraysInArrays": true
+    var result = fn([2, 'never', {
+      'singleValue': true,
+      'objectsInArrays': true,
+      'arraysInArrays': true
     }])
 
     expect(result.disallowSpacesInsideArrayBrackets.allExcept).to.eql(
@@ -158,8 +158,8 @@ describe('eslint', function () {
   it('converts camelcase correctly', function () {
     var fn = getFn('camelcase')
 
-    expect(fn([2, {properties: "always"}])).to.eql(false)
-    expect(fn([2, {properties: "never"}])).to.eql(true)
+    expect(fn([2, {properties: 'always'}])).to.eql(false)
+    expect(fn([2, {properties: 'never'}])).to.eql(true)
   })
 
   it('converts comma-spacing correctly', function () {
@@ -222,7 +222,7 @@ describe('eslint', function () {
   it('converts key-spacing correctly', function () {
     var fn = getFn('key-spacing')
 
-    expect(fn([2, { "align": "colon" }])).to.eql({
+    expect(fn([2, { 'align': 'colon' }])).to.eql({
       requireAlignedObjectValues: true,
       disallowSpaceAfterObjectKeys: {
         allExcept: ['aligned']
@@ -230,7 +230,7 @@ describe('eslint', function () {
     })
 
     expect(fn(
-      [2, { "align": "colon", "beforeColon": true, "afterColon": false }]
+      [2, { 'align': 'colon', 'beforeColon': true, 'afterColon': false }]
     )).to.eql({
       requireAlignedObjectValues: true,
       disallowSpaceAfterObjectKeys: {
@@ -238,17 +238,17 @@ describe('eslint', function () {
       }
     })
 
-    expect(fn([2, {"beforeColon": true, "afterColon": true}])).to.eql({
+    expect(fn([2, {'beforeColon': true, 'afterColon': true}])).to.eql({
       requireSpaceAfterObjectKeys: true,
       requireSpaceBeforeObjectValues: true
     })
 
-    expect(fn([2, {"beforeColon": false, "afterColon": false}])).to.eql({
+    expect(fn([2, {'beforeColon': false, 'afterColon': false}])).to.eql({
       disallowSpaceBeforeObjectValues: true,
       disallowSpaceAfterObjectKeys: true
     })
 
-    expect(fn([2, {"beforeColon": true, "afterColon": false}])).to.eql({
+    expect(fn([2, {'beforeColon': true, 'afterColon': false}])).to.eql({
       requireSpaceAfterObjectKeys: true,
       disallowSpaceBeforeObjectValues: true
     })
@@ -279,11 +279,11 @@ describe('eslint', function () {
 
     expect(fn(2)).to.eql(true)
 
-    expect(fn([2, {"capIsNewExceptions": ["Person"]}])).to.eql({
+    expect(fn([2, {'capIsNewExceptions': ['Person']}])).to.eql({
       allExcept: ['Person']
     })
 
-    expect(fn([2, {"capIsNewExceptions": ["foo.Person"]}])).to.eql({
+    expect(fn([2, {'capIsNewExceptions': ['foo.Person']}])).to.eql({
       allExcept: ['foo.Person']
     })
   })
@@ -309,7 +309,7 @@ describe('eslint', function () {
 
     expect(fn([2])).to.eql(true)
 
-    expect(fn([2, { "skipBlankLines": true }])).to.eql('ignoreEmptyLines')
+    expect(fn([2, { 'skipBlankLines': true }])).to.eql('ignoreEmptyLines')
   })
 
   it('converts one-var correctly', function () {
@@ -363,15 +363,15 @@ describe('eslint', function () {
   it('converts quote-props correctly', function () {
     var fn = getFn('quote-props')
 
-    expect(fn([2, "as-needed"])).to.eql({
+    expect(fn([2, 'as-needed'])).to.eql({
       disallowQuotedKeysInObjects: true
     })
 
-    expect(fn([2, "always"])).to.eql({
+    expect(fn([2, 'always'])).to.eql({
       requireQuotedKeysInObjects: true
     })
 
-    expect(fn([2, "as-needed", { "keywords": true }])).to.eql({
+    expect(fn([2, 'as-needed', { 'keywords': true }])).to.eql({
       disallowQuotedKeysInObjects: 'allButReserved'
     })
 
@@ -492,14 +492,14 @@ describe('eslint', function () {
 
     expect(fn(0)).to.eql({})
 
-    expect(fn([2, 'never', { exceptions: ["[]"] }])).to.eql({
-      disallowSpacesInsideParentheses: { only: [ "[", "]" ] }
+    expect(fn([2, 'never', { exceptions: ['[]'] }])).to.eql({
+      disallowSpacesInsideParentheses: { only: [ '[', ']' ] }
     })
 
-    expect(fn([2, 'always', { exceptions: ["{}"] }])).to.eql({
+    expect(fn([2, 'always', { exceptions: ['{}'] }])).to.eql({
       requireSpacesInsideParentheses: {
         all: true,
-        except: [ "{", "}" ]
+        except: [ '{', '}' ]
       }
     })
   })
