@@ -529,10 +529,12 @@ describe('eslint', function () {
     })
   })
 
-  it.skip('converts space-unary-ops correctly', function () {
+  it('converts space-unary-ops correctly', function () {
     var fn = getFn('space-unary-ops')
 
-    expect(fn()).to.eql()
+    expect(fn([2])).to.eql({ requireSpaceAfterPrefixUnaryOperators: true })
+
+    expect(fn([0])).to.eql({ disallowSpaceAfterPrefixUnaryOperators: true })
   })
 
   it.skip('converts arrow-parens correctly', function () {
