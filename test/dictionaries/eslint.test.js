@@ -146,12 +146,16 @@ describe('eslint', function () {
   it('converts brace-style correctly', function () {
     var fn = getFn('brace-style')
 
+    var spacedKeywords = ['do', 'for', 'if', 'else', 'switch', 'case', 'try',
+    'catch', 'finally', 'void', 'while', 'with', 'return', 'typeof',
+    'function']
+
     expect(fn([2, 'stroustrup', { 'allowSingleLine': true }])).to.eql({
-      requireKeywordsOnNewLine: true
+      requireKeywordsOnNewLine: spacedKeywords
     })
 
     expect(fn(2)).to.eql({
-      disallowKeywordsOnNewLine: true
+      disallowKeywordsOnNewLine: spacedKeywords
     })
   })
 

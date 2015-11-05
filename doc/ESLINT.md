@@ -1,7 +1,6 @@
 # ESLint discarded rules
 
 * `id-match` works precisely only when the rule is on the form `^(x|y|...|z)$`
-* `no-console`
 * `no-constant-condition`
 * `no-control-regex`
 * `no-dupe-args`
