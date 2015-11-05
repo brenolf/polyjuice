@@ -196,7 +196,9 @@ describe('eslint', function () {
   it('converts func-names correctly', function () {
     var fn = getFn('func-names')
 
-    expect(fn()).to.eql({
+    expect(fn(0)).to.eql({})
+
+    expect(fn(2)).to.eql({
       requireNamedUnassignedFunctions: true,
       disallowAnonymousFunctions: true
     })

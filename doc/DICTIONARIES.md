@@ -68,13 +68,13 @@ This will work just as above, applying it to every string in the array.
 }
 ```
 
-For objects there are 4 possible keys to be used: `name`, `truthy`, `falsy` and `test`. The attribute `name` is **mandatory** it is the name in the target language. The attribute `test`, if given, should be always a function and works much like using a function directly, but having their context set to an object with a single key `value`, whose value is the current value of the  attribute being set (the one represented by `name`).
+For objects there are 4 possible keys to be used: `name`, `truthy`, `falsy`, `eval` and `test`. The attribute `name` is **mandatory** it is the name in the target language. The attribute `test`, if given, should be always a function and works much like using a function directly, but having their context set to an object with a single key `value`, whose value is the current value of the  attribute being set (the one represented by `name`). The attribute `eval`, if given, should be a function that returns an object with the keys do be added, just like using it directly as a function. It is useful when there are more things you take into account (like ESLint conversion).
 
-Since Polyjuice has a FCFS policy for transpiling, the context provided for `test` plays an important rule on it. For instance, there could be a scenario where multiple options can be applied to the same rule and they are non-overlapping. Thus, you could find the context's values useful in order to preserve the previously applied rules.
+Since Polyjuice has a FCFS policy for transpiling, the context provided for both `test` and `eval` plays an important rule on it. For instance, there could be a scenario where multiple options can be applied to the same rule and they are non-overlapping. Thus, you could find the context's values useful in order to preserve the previously applied rules.
 
 The attributes `truthy` and `falsy`, if functions, are shorthands for `test` because they will only be called after applying the truth function and deciding whether or not the value is to be considered true/false. However, `truthy` and `falsy` can also have the content to be applied directly (no need to be functions as `test`).
 
-Note that `test` is always prioritized over `truthy` and `falsy`. Also mind the interpreter's FCFS policy when implementing a translation.
+Bear in mind that the function priority is `eval > test > truthy/falsy`. Also mind the interpreter's FCFS policy when implementing a translation.
 
 #### ESLint attributes
 
