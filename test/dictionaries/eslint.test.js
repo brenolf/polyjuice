@@ -252,10 +252,11 @@ describe('eslint', function () {
     })
   })
 
-  it.skip('converts linebreak-style correctly', function () {
+  it('converts linebreak-style correctly', function () {
     var fn = getFn('linebreak-style')
 
-    expect(fn()).to.eql()
+    expect(fn([2, 'windows'])).to.eql('CLRF')
+    expect(fn([2, 'unix'])).to.eql('LF')
   })
 
   it.skip('converts lines-around-comment correctly', function () {
