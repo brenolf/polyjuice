@@ -162,8 +162,8 @@ describe('eslint', function () {
   it('converts camelcase correctly', function () {
     var fn = getFn('camelcase')
 
-    expect(fn([2, {properties: 'always'}])).to.eql(false)
-    expect(fn([2, {properties: 'never'}])).to.eql(true)
+    expect(fn([2, {properties: 'always'}])).to.eql(true)
+    expect(fn([2, {properties: 'never'}])).to.eql('ignoreProperties')
   })
 
   it('converts comma-spacing correctly', function () {
