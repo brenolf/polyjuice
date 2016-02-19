@@ -139,6 +139,17 @@ describe('jscs', function () {
     expect(fn({ 'beforeOpeningCurlyBrace': true })).to.be.empty
   })
 
+  it('converts requireSpacesInNamedFunctionExpression correctly', function () {
+    var fn = getFn('requireSpacesInNamedFunctionExpression')
+
+    expect(fn({
+      'beforeOpeningRoundBrace': true,
+      'beforeOpeningCurlyBrace': true
+    })).to.eql({ 'space-before-function-paren': [2, 'always'] })
+
+    expect(fn({ 'beforeOpeningCurlyBrace': true })).to.be.empty
+  })
+
   it('converts disallowSpacesInsideArrayBrackets correctly', function () {
     var fn = getFn('disallowSpacesInsideArrayBrackets')
     var fnBound = getFn(
