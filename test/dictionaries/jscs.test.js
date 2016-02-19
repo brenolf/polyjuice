@@ -128,6 +128,30 @@ describe('jscs', function () {
     expect(fn({ 'beforeOpeningCurlyBrace': true })).to.be.empty
   })
 
+  it('converts disallowSpacesInAnonymousFunctionExpression correctly',
+  function () {
+    var fn = getFn('disallowSpacesInAnonymousFunctionExpression')
+
+    expect(fn({
+      'beforeOpeningRoundBrace': true,
+      'beforeOpeningCurlyBrace': true
+    })).to.eql({ 'space-before-function-paren': [2, 'never'] })
+
+    expect(fn({ 'beforeOpeningCurlyBrace': true })).to.be.empty
+  })
+
+  it('converts requireSpacesInAnonymousFunctionExpression correctly',
+  function () {
+    var fn = getFn('requireSpacesInAnonymousFunctionExpression')
+
+    expect(fn({
+      'beforeOpeningRoundBrace': true,
+      'beforeOpeningCurlyBrace': true
+    })).to.eql({ 'space-before-function-paren': [2, 'always'] })
+
+    expect(fn({ 'beforeOpeningCurlyBrace': true })).to.be.empty
+  })
+
   it('converts disallowSpacesInNamedFunctionExpression correctly', function () {
     var fn = getFn('disallowSpacesInNamedFunctionExpression')
 

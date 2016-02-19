@@ -11,7 +11,6 @@
 * `PaddingNewLinesInObjects`
 * `SpaceBetweenArguments`
 * `SpacesInConditionalExpression`
-* `SpacesInAnonymousFunctionExpression`
 * `SpacesInForStatement`
 * `SpacesInsideBrackets`
 
