@@ -43,7 +43,6 @@
 * `requireArrowFunctions`
 * `requireBlocksOnNewline`
 * `requireDollarBeforejQueryAssignment`
-* `requireFunctionDeclarations`
 * `requireMatchingFunctionName`
 * `requireNumericLiterals`
 * `requireShorthandArrowFunctions`
