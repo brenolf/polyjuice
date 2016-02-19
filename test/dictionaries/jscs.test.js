@@ -63,28 +63,6 @@ describe('jscs', function () {
     )
   })
 
-  it('converts disallowSpaceAfterKeywords correctly', function () {
-    var fn = getFn('disallowSpaceAfterKeywords')
-
-    expect(fn(true)).to.eql({
-      'space-after-keywords': [2, 'never'],
-      'space-return-throw-case': 0
-    })
-
-    expect(fn(['if', 'else'])).to.eql({
-      'space-after-keywords': [2, 'never']
-    })
-
-    expect(fn(['return', 'throw'])).to.eql({
-      'space-return-throw-case': 0
-    })
-
-    expect(fn(['if', 'return'])).to.eql({
-      'space-after-keywords': [2, 'never'],
-      'space-return-throw-case': 0
-    })
-  })
-
   it('converts disallowSpaceAfterObjectKeys correctly', function () {
     var fn = getFn('disallowSpaceAfterObjectKeys')
 
@@ -245,28 +223,6 @@ describe('jscs', function () {
     expect(fn({ 'allExcept': [ 'snake_case' ] })).to.eql([2, {
       'allowPattern': '^[a-z]+(_[a-z]+)+$'
     }])
-  })
-
-  it('converts requireSpaceAfterKeywords correctly', function () {
-    var fn = getFn('requireSpaceAfterKeywords')
-
-    expect(fn(true)).to.eql({
-      'space-after-keywords': [2, 'always'],
-      'space-return-throw-case': 0
-    })
-
-    expect(fn(['if', 'else'])).to.eql({
-      'space-after-keywords': [2, 'always']
-    })
-
-    expect(fn(['return', 'throw'])).to.eql({
-      'space-return-throw-case': 0
-    })
-
-    expect(fn(['if', 'return'])).to.eql({
-      'space-after-keywords': [2, 'always'],
-      'space-return-throw-case': 0
-    })
   })
 
   it('converts requireSpaceAfterObjectKeys correctly', function () {
@@ -437,5 +393,177 @@ describe('jscs', function () {
     expect(fn({ 'mark': '"', 'escape': false })).to.eql(
       [2, 'double']
     )
+  })
+
+  it('converts disallowSpaceBeforeKeywords correctly', function () {
+    var fn = getFn('disallowSpaceBeforeKeywords')
+
+    var fnBound = getFn('disallowSpaceBeforeKeywords', [
+      2, {
+        overrides: {
+          'if': { after: false }
+        }
+      }
+    ])
+
+    expect(fn(true)).to.eql([2, { before: false, overrides: {} }])
+
+    expect(fnBound(true)).to.eql([2, {
+      before: false,
+      overrides: {
+        'if': { after: false }
+      }
+    }])
+
+    expect(fn([
+      'else', 'try', 'catch'
+    ])).to.eql([2, {
+      overrides: {
+        'else': { before: false },
+        'try': { before: false },
+        'catch': { before: false }
+      }
+    }])
+
+    expect(fnBound([
+      'else', 'try', 'catch'
+    ])).to.eql([2, {
+      before: false,
+      overrides: {
+        'else': { before: false },
+        'try': { before: false },
+        'catch': { before: false },
+        'if': { after: false }
+      }
+    }])
+  })
+
+  it('converts requireSpaceBeforeKeywords correctly', function () {
+    var fn = getFn('requireSpaceBeforeKeywords')
+
+    var fnBound = getFn('requireSpaceBeforeKeywords', [
+      2, {
+        overrides: {
+          'if': { after: false }
+        }
+      }
+    ])
+
+    expect(fn(true)).to.eql([2, { before: true, overrides: {} }])
+
+    expect(fnBound(true)).to.eql([2, {
+      before: true,
+      overrides: {
+        'if': { after: false }
+      }
+    }])
+
+    expect(fn([
+      'else', 'try', 'catch'
+    ])).to.eql([2, {
+      overrides: {
+        'else': { before: true },
+        'try': { before: true },
+        'catch': { before: true }
+      }
+    }])
+
+    expect(fnBound([
+      'else', 'try', 'catch'
+    ])).to.eql([2, {
+      before: true,
+      overrides: {
+        'else': { before: true },
+        'try': { before: true },
+        'catch': { before: true },
+        'if': { after: false }
+      }
+    }])
+  })
+
+  it('converts disallowSpaceAfterKeywords correctly', function () {
+    var fn = getFn('disallowSpaceAfterKeywords')
+
+    var fnBound = getFn('disallowSpaceAfterKeywords', [
+      2, {
+        overrides: {
+          'if': { after: true }
+        }
+      }
+    ])
+
+    expect(fn(true)).to.eql([2, { after: false, overrides: {} }])
+
+    expect(fnBound(true)).to.eql([2, {
+      after: false,
+      overrides: {
+        'if': { after: true }
+      }
+    }])
+
+    expect(fn([
+      'else', 'try', 'catch'
+    ])).to.eql([2, {
+      overrides: {
+        'else': { after: false },
+        'try': { after: false },
+        'catch': { after: false }
+      }
+    }])
+
+    expect(fnBound([
+      'else', 'try', 'catch'
+    ])).to.eql([2, {
+      after: false,
+      overrides: {
+        'else': { after: false },
+        'try': { after: false },
+        'catch': { after: false },
+        'if': { after: true }
+      }
+    }])
+  })
+
+  it('converts requireSpaceAfterKeywords correctly', function () {
+    var fn = getFn('requireSpaceAfterKeywords')
+
+    var fnBound = getFn('requireSpaceAfterKeywords', [
+      2, {
+        overrides: {
+          'if': { after: true }
+        }
+      }
+    ])
+
+    expect(fn(true)).to.eql([2, { after: true, overrides: {} }])
+
+    expect(fnBound(true)).to.eql([2, {
+      after: true,
+      overrides: {
+        'if': { after: true }
+      }
+    }])
+
+    expect(fn([
+      'else', 'try', 'catch'
+    ])).to.eql([2, {
+      overrides: {
+        'else': { after: true },
+        'try': { after: true },
+        'catch': { after: true }
+      }
+    }])
+
+    expect(fnBound([
+      'else', 'try', 'catch'
+    ])).to.eql([2, {
+      after: true,
+      overrides: {
+        'else': { after: true },
+        'try': { after: true },
+        'catch': { after: true },
+        'if': { after: true }
+      }
+    }])
   })
 })

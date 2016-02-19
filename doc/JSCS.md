@@ -13,7 +13,6 @@
 * `disallowPaddingNewLinesInObjects`
 * `disallowSpaceAfterBinaryOperators`
 * `disallowSpaceBeforeBinaryOperators`
-* `disallowSpaceBeforeKeywords`
 * `disallowSpaceBeforePostfixUnaryOperators`
 * `disallowSpaceBetweenArguments`
 * `disallowSpacesInConditionalExpression`
@@ -38,7 +37,6 @@
 * `requirePaddingNewLinesInObjects`
 * `requireShorthandArrowFunctions`
 * `requireSpaceBeforeBinaryOperators`
-* `requireSpaceBeforeKeywords`
 * `requireSpaceBeforePostfixUnaryOperators`
 * `requireSpaceBetweenArguments`
 * `requireSpacesInAnonymousFunctionExpression`
