@@ -12,7 +12,6 @@
 * `disallowPaddingNewlinesBeforeKeywords`
 * `disallowPaddingNewLinesInObjects`
 * `disallowSpaceAfterBinaryOperators`
-* `disallowSpaceAfterLineComment`
 * `disallowSpaceBeforeBinaryOperators`
 * `disallowSpaceBeforeKeywords`
 * `disallowSpaceBeforePostfixUnaryOperators`

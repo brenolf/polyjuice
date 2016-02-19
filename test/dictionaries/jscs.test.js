@@ -269,22 +269,6 @@ describe('jscs', function () {
     })
   })
 
-  it('converts requireSpaceAfterLineComment correctly', function () {
-    var fn = getFn('requireSpaceAfterLineComment')
-    var fnBound = getFn(
-      'requireSpaceAfterLineComment',
-      [2, { 'afterBlockComment': false, 'afterLineComment': false }]
-    )
-
-    expect(fn()).to.eql(
-      [2, { 'afterBlockComment': true, 'afterLineComment': true }]
-    )
-
-    expect(fnBound()).to.eql(
-      [2, { 'afterBlockComment': true, 'afterLineComment': true }]
-    )
-  })
-
   it('converts requireSpaceAfterObjectKeys correctly', function () {
     var fn = getFn('requireSpaceAfterObjectKeys')
     var fnBound = getFn(
