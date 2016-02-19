@@ -10,7 +10,6 @@
 * `disallowPaddingNewLinesAfterUseStrict`
 * `disallowPaddingNewLinesBeforeExport`
 * `disallowPaddingNewlinesBeforeKeywords`
-* `disallowPaddingNewLinesBeforeLineComments`
 * `disallowPaddingNewLinesInObjects`
 * `disallowSpaceAfterBinaryOperators`
 * `disallowSpaceAfterLineComment`
