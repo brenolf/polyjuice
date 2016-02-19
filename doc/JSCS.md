@@ -19,8 +19,6 @@
 * `requirePaddingNewLinesInObjects`
 * `disallowSpaceBeforeBinaryOperators`
 * `requireSpaceBeforeBinaryOperators`
-* `disallowSpaceBeforePostfixUnaryOperators`
-* `requireSpaceBeforePostfixUnaryOperators`
 * `disallowSpaceBetweenArguments`
 * `requireSpaceBetweenArguments`
 * `disallowSpacesInConditionalExpression`
