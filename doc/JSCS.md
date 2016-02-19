@@ -1,34 +1,20 @@
 # JSCS discarded rules
 
 ## Disallow/Require pairs
-* `disallowCapitalizedComments`
-* `requireCapitalizedComments`
-* `disallowNewlineBeforeBlockStatements`
-* `requireNewlineBeforeBlockStatements`
-* `disallowObjectKeysOnNewLine`
-* `requireObjectKeysOnNewLine`
-* `disallowPaddingNewLinesAfterBlocks`
-* `requirePaddingNewLinesAfterBlocks`
-* `disallowPaddingNewLinesAfterUseStrict`
-* `requirePaddingNewLinesAfterUseStrict`
-* `disallowPaddingNewLinesBeforeExport`
-* `requirePaddingNewLinesBeforeExport`
-* `disallowPaddingNewlinesBeforeKeywords`
-* `requirePaddingNewlinesBeforeKeywords`
-* `disallowPaddingNewLinesInObjects`
-* `requirePaddingNewLinesInObjects`
-* `disallowSpaceBeforeBinaryOperators`
-* `requireSpaceBeforeBinaryOperators`
-* `disallowSpaceBetweenArguments`
-* `requireSpaceBetweenArguments`
-* `disallowSpacesInConditionalExpression`
-* `requireSpacesInConditionalExpression`
-* `disallowSpacesInAnonymousFunctionExpression`
-* `requireSpacesInAnonymousFunctionExpression`
-* `disallowSpacesInForStatement`
-* `requireSpacesInForStatement`
-* `disallowSpacesInsideBrackets`
-* `requireSpacesInsideBrackets`
+* `CapitalizedComments`
+* `NewlineBeforeBlockStatements`
+* `ObjectKeysOnNewLine`
+* `PaddingNewLinesAfterBlocks`
+* `PaddingNewLinesAfterUseStrict`
+* `PaddingNewLinesBeforeExport`
+* `PaddingNewLinesBeforeKeywords`
+* `PaddingNewLinesInObjects`
+* `SpaceBeforeBinaryOperators`
+* `SpaceBetweenArguments`
+* `SpacesInConditionalExpression`
+* `SpacesInAnonymousFunctionExpression`
+* `SpacesInForStatement`
+* `SpacesInsideBrackets`
 
 ## Disallow only
 * `disallowNamedUnassignedFunctions`
