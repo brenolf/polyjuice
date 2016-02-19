@@ -40,7 +40,6 @@
 
 ## Require only
 * `requireAnonymousFunctions`
-* `requireArrowFunctions`
 * `requireBlocksOnNewline`
 * `requireDollarBeforejQueryAssignment`
 * `requireMatchingFunctionName`
