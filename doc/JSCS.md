@@ -1,51 +1,58 @@
 # JSCS discarded rules
 
+## Disallow/Require pairs
 * `disallowCapitalizedComments`
-* `disallowNamedUnassignedFunctions`
+* `requireCapitalizedComments`
 * `disallowNewlineBeforeBlockStatements`
+* `requireNewlineBeforeBlockStatements`
+* `disallowObjectKeysOnNewLine`
+* `requireObjectKeysOnNewLine`
+* `disallowPaddingNewLinesAfterBlocks`
+* `requirePaddingNewLinesAfterBlocks`
+* `disallowPaddingNewLinesAfterUseStrict`
+* `requirePaddingNewLinesAfterUseStrict`
+* `disallowPaddingNewLinesBeforeExport`
+* `requirePaddingNewLinesBeforeExport`
+* `disallowPaddingNewlinesBeforeKeywords`
+* `requirePaddingNewlinesBeforeKeywords`
+* `disallowPaddingNewLinesInObjects`
+* `requirePaddingNewLinesInObjects`
+* `disallowSpaceBeforeBinaryOperators`
+* `requireSpaceBeforeBinaryOperators`
+* `disallowSpaceBeforePostfixUnaryOperators`
+* `requireSpaceBeforePostfixUnaryOperators`
+* `disallowSpaceBetweenArguments`
+* `requireSpaceBetweenArguments`
+* `disallowSpacesInConditionalExpression`
+* `requireSpacesInConditionalExpression`
+* `disallowSpacesInAnonymousFunctionExpression`
+* `requireSpacesInAnonymousFunctionExpression`
+* `disallowSpacesInForStatement`
+* `requireSpacesInForStatement`
+* `disallowSpacesInsideBrackets`
+* `requireSpacesInsideBrackets`
+
+## Disallow only
+* `disallowNamedUnassignedFunctions`
 * `disallowNodeTypes`
 * `disallowNotOperatorsInConditionals`
-* `disallowObjectKeysOnNewLine`
-* `disallowPaddingNewLinesAfterBlocks`
-* `disallowPaddingNewLinesAfterUseStrict`
-* `disallowPaddingNewLinesBeforeExport`
-* `disallowPaddingNewlinesBeforeKeywords`
-* `disallowPaddingNewLinesInObjects`
 * `disallowSpaceAfterBinaryOperators`
-* `disallowSpaceBeforeBinaryOperators`
-* `disallowSpaceBeforePostfixUnaryOperators`
-* `disallowSpaceBetweenArguments`
-* `disallowSpacesInConditionalExpression`
-* `disallowSpacesInAnonymousFunctionExpression`
-* `disallowSpacesInForStatement`
-* `disallowSpacesInsideBrackets`
-* `maximumNumberOfLines`
+
+## Require only
 * `requireAnonymousFunctions`
 * `requireArrowFunctions`
 * `requireBlocksOnNewline`
-* `requireCapitalizedComments`
 * `requireDollarBeforejQueryAssignment`
 * `requireFunctionDeclarations`
 * `requireMatchingFunctionName`
-* `requireNewlineBeforeBlockStatements`
 * `requireNumericLiterals`
-* `requireObjectKeysOnNewLine`
-* `requirePaddingNewLinesAfterBlocks`
-* `requirePaddingNewLinesAfterUseStrict`
-* `requirePaddingNewLinesBeforeExport`
-* `requirePaddingNewlinesBeforeKeywords`
-* `requirePaddingNewLinesInObjects`
 * `requireShorthandArrowFunctions`
-* `requireSpaceBeforeBinaryOperators`
-* `requireSpaceBeforePostfixUnaryOperators`
-* `requireSpaceBetweenArguments`
-* `requireSpacesInAnonymousFunctionExpression`
 * `requireSpacesInCallExpression`
-* `requireSpacesInConditionalExpression`
-* `requireSpacesInForStatement`
 * `requireSpacesInFunction`
 * `requireSpacesInNamedFunctionExpression`
-* `requireSpacesInsideBrackets`
+
+## Validation
+* `maximumNumberOfLines`
 * `validateAlignedFunctionParameters`
 * `validateNewlineAfterArrayElements`
 * `validateParameterSeparator`
