@@ -117,6 +117,17 @@ describe('jscs', function () {
     expect(fn({ 'beforeOpeningCurlyBrace': true })).to.be.empty
   })
 
+  it('converts requireSpacesInFunction correctly', function () {
+    var fn = getFn('requireSpacesInFunction')
+
+    expect(fn({
+      'beforeOpeningRoundBrace': true,
+      'beforeOpeningCurlyBrace': true
+    })).to.eql({ 'space-before-function-paren': [2, 'always'] })
+
+    expect(fn({ 'beforeOpeningCurlyBrace': true })).to.be.empty
+  })
+
   it('converts disallowSpacesInNamedFunctionExpression correctly', function () {
     var fn = getFn('disallowSpacesInNamedFunctionExpression')
 

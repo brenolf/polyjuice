@@ -46,7 +46,6 @@
 * `requireNumericLiterals`
 * `requireShorthandArrowFunctions`
 * `requireSpacesInCallExpression`
-* `requireSpacesInFunction`
 * `requireSpacesInNamedFunctionExpression`
 
 ## Validation
