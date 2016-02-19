@@ -9,7 +9,6 @@
 * `PaddingNewLinesBeforeExport`
 * `PaddingNewLinesBeforeKeywords`
 * `PaddingNewLinesInObjects`
-* `SpaceBeforeBinaryOperators`
 * `SpaceBetweenArguments`
 * `SpacesInConditionalExpression`
 * `SpacesInAnonymousFunctionExpression`
@@ -21,6 +20,7 @@
 * `disallowNodeTypes`
 * `disallowNotOperatorsInConditionals`
 * `disallowSpaceAfterBinaryOperators`
+* `disallowSpaceBeforeBinaryOperators`
 
 ## Require only
 * `requireAnonymousFunctions`
