@@ -620,8 +620,30 @@ describe('jscs', function () {
       'A', 'B'
     ])
 
-    expect(fn('CLRF')).to.eql(['ArrowFunctionExpression'])
+    expect(fn()).to.eql(['ArrowFunctionExpression'])
 
-    expect(fnBound('LF')).to.eql(['A', 'B', 'ArrowFunctionExpression'])
+    expect(fnBound()).to.eql(['A', 'B', 'ArrowFunctionExpression'])
+  })
+
+  it('converts requireSpacesInsideParenthesizedExpression correctly',
+  function () {
+    var fn = getFn('requireSpacesInsideParenthesizedExpression')
+
+    expect(fn(true)).to.eql([2, 'always'])
+
+    expect(fn({
+      'allExcept': ['{', '}']
+    })).to.eql([2, 'always', { 'exceptions': ['{}'] }])
+  })
+
+  it('converts disallowSpacesInsideParenthesizedExpression correctly',
+  function () {
+    var fn = getFn('disallowSpacesInsideParenthesizedExpression')
+
+    expect(fn(true)).to.eql([2, 'never'])
+
+    expect(fn({
+      'allExcept': ['{', '}']
+    })).to.eql([2, 'never', { 'exceptions': ['{}'] }])
   })
 })
