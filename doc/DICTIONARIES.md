@@ -6,7 +6,7 @@ Basically, there is a truth function that will be used to test the value of the 
 The truth function is currently default for all languages, and its implementation is as follows.
 
 ```js
-var fn = function (input) {
+var fn = function(input) {
   if (typeof input === 'number') {
     return true
   }
@@ -29,8 +29,10 @@ It tells that if the value of the rule is a number, then it is considered true o
 ### Function
 
 ```js
-'rule-in-jshint': function (value) {
-  return { 'rule-in-eslint': [2, value] }
+module.exports = function(__current__, value) {
+  return {
+    'rule-in-eslint': [2, value]
+  }
 }
 ```
 
@@ -39,15 +41,15 @@ This format tells the interpreter that you will return an object containing all 
 ### String
 
 ```js
-'rule-in-jshint': 'rule-in-eslint'
+module.exports = 'rule-in-eslint'
 ```
 
-This format tells the interpreter that those rules are equivalent. Therefore, using the truth function on the value it gets the corresponding default true/false value from the truth table (or copy it if a number). I.e. if `'rule-in-jshint': true` is in the source file, `'rule-in-eslint': 2` will be generated.
+This format tells the interpreter that those rules are equivalent. Therefore, using the truth function on the value it gets the corresponding default true/false value from the truth table (or copy it if a number). I.e. if `rule-in-jshint': true` is in the source file, `'rule-in-eslint': 2` will be generated.
 
 ### Array
 
 ```js
-'rule-in-jshint': ['rule-in-eslint-1', 'rule-in-eslint-2']
+module.exports = ['rule-in-eslint-1', 'rule-in-eslint-2']
 ```
 
 This will work just as above, applying it to every string in the array.
@@ -55,11 +57,11 @@ This will work just as above, applying it to every string in the array.
 ### Object
 
 ```js
-'rule-in-jshint': {
+module.exports = {
   name: 'rule-in-eslint',
-  truthy: function (value) {
-    if (this.value) {
-      return [2, this.value, value]
+  truthy: function(__current__, value) {
+    if (__current__) {
+      return [2, __current__, value]
     }
 
     return [2, value]
@@ -68,17 +70,27 @@ This will work just as above, applying it to every string in the array.
 }
 ```
 
-For objects there are 4 possible keys to be used: `name`, `truthy`, `falsy`, `eval` and `test`. The attribute `name` is **mandatory** it is the name in the target language. The attribute `test`, if given, should be always a function and works much like using a function directly, but having their context set to an object with a single key `value`, whose value is the current value of the  attribute being set (the one represented by `name`). The attribute `eval`, if given, should be a function that returns an object with the keys do be added, just like using it directly as a function. It is useful when there are more things you take into account (like ESLint conversion).
+#### Attributes
 
-Since Polyjuice has a FCFS policy for transpiling, the context provided for both `test` and `eval` plays an important rule on it. For instance, there could be a scenario where multiple options can be applied to the same rule and they are non-overlapping. Thus, you could find the context's values useful in order to preserve the previously applied rules.
+##### `name`
 
-The attributes `truthy` and `falsy`, if functions, are shorthands for `test` because they will only be called after applying the truth function and deciding whether or not the value is to be considered true/false. However, `truthy` and `falsy` can also have the content to be applied directly (no need to be functions as `test`).
+The attribute `name` is **mandatory**. It is the name in the target language.
 
-Bear in mind that the function priority is `eval > test > truthy/falsy`. Also mind the interpreter's FCFS policy when implementing a translation.
+##### `eval`
 
-#### ESLint attributes
+The attribute `eval`, if given, should be always a function and works much like using a function directly; However you do not need to provide the target as an object.
 
-When converting from ESLint, the object has to contain the `target` library it's converting to. ESLint conversions returns an object whose keys are the targets read when transpiling a file. For instance:
+##### `truthy`
+
+The attribute `truthy`, if function, is a shorthand for `eval`. It is called after the truth function  decides the value is considered `true`. It can also be a string, an array, or any other value that can be directly applied.
+
+##### `falsy`
+
+The attribute `falsy`, if function, is a shorthand for `eval`. It is called after the truth function  decides the value is considered `false`. It can also be a string, an array, or any other value that can be directly applied.
+
+##### `target`
+
+When converting from ESLint, the object **must** contain the `target` library it is converting to. ESLint conversions return an object whose keys are the targets read when transpiling a file. For instance:
 
 ```js
 'rule-in-eslint': {
@@ -87,3 +99,7 @@ When converting from ESLint, the object has to contain the `target` library it's
   truthy: true
 }
 ```
+
+#### FCFS Policy
+
+Polyjuice has a FCFS policy for transpiling. Therefore, all transpiling functions have two arguments: `__current__` and `value`. The first is the current value for the rule being assessed; It is useful when there is overlapping rules. The latter is the actual value of the rule being assessed in the moment. Bear in mind that the function priority is `eval > test > truthy/falsy`.

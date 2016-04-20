@@ -1,6 +1,6 @@
 var interpreter = require('../lib/polyjuice/interpreter')
 
-describe('Reader', function () {
+describe('Reader', function() {
   var dictionary = require('./fixtures/langx_dic')
   var tb = {true: 'default-true', false: 'default-false'}
 
@@ -11,11 +11,11 @@ describe('Reader', function () {
 
   var result = interpreter(dictionary, src, tb, discarded)
 
-  it('converts correctly a whole json file', function () {
+  it('converts correctly a whole json file', function() {
     expect(result).to.eql(trg)
   })
 
-  it('adds discarded rules to the last parameter', function () {
+  it('adds discarded rules to the last parameter', function() {
     expect(discarded).to.eql(['invisible-rule', 'non-existent-rule'])
   })
 })

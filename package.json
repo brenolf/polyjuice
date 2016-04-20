@@ -1,6 +1,6 @@
 {
   "name": "polyjuice",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "A utility to converts JSHint and JSCS files into ESLint and vice-versa",
   "main": "./index",
   "scripts": {
@@ -8,7 +8,7 @@
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha -- --opts mocha.opts --report lcovonly && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --opts mocha.opts",
     "mocha": "./node_modules/.bin/_mocha --opts mocha.opts",
-    "lint": "jshint --reporter=node_modules/jshint-stylish lib test; jscs lib test; exit 0"
+    "lint": "./node_modules/.bin/eslint -c ./.eslintrc lib test"
   },
   "repository": {
     "type": "git",
@@ -41,7 +41,7 @@
     "polyjuice": "./lib/bin.js"
   },
   "dependencies": {
-    "eslint": "^2.2.0",
+    "eslint": "^2.8.0",
     "strip-json-comments": "^1.0.4",
     "yargs": "^3.22.2"
   }

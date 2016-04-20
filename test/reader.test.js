@@ -1,19 +1,22 @@
 var Reader = require('../lib/polyjuice/reader')
 
-describe('Reader', function () {
+describe('Reader', function() {
   var dictionary = require('./fixtures/langx_dic')
 
-  var tb = {true: 'default-true', false: 'default-false'}
+  var tb = {
+    true: 'default-true',
+    false: 'default-false'
+  }
 
-  var fn = function (arg) {
+  var fn = function(arg) {
     return (typeof arg === 'number') ? true : (arg ? true : false)
   }
 
   var reader = new Reader(dictionary, fn, tb)
 
-  describe('#get', function () {
-    context('when there is no previous content with the key', function () {
-      it('converts correctly an entry', function () {
+  describe('#get', function() {
+    context('when there is no previous content with the key', function() {
+      it('converts correctly an entry', function() {
         expect(reader.get('rule1', 'value2')).to.eql({
           'new-rule1.1': 'value-x',
           'new-rule1.2': 'value-y'
@@ -69,12 +72,12 @@ describe('Reader', function () {
       })
     })
 
-    context('when there is a previous content with the key', function () {
-      before(function () {
+    context('when there is a previous content with the key', function() {
+      before(function() {
         reader.current = {'new-rule10': 'an-old-value'}
       })
 
-      it('converts correctly an entry', function () {
+      it('converts correctly an entry', function() {
         expect(reader.get('substitute-rule', true)).to.be.eql({
           'new-rule10': 'replace-old-value'
         })

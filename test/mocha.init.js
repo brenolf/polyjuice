@@ -4,18 +4,12 @@ var chai = require('chai')
 
 global.expect = chai.expect
 
-global.caller = function (lib) {
-  var result = function (name, scope) {
-    var fn = typeof lib[name] === 'function'
-             ? lib[name]
-             : (lib[name].truthy || lib[name].test || lib[name].eval)
+global.caller = function(lib) {
+  return function(__current__) {
+    var fn =  typeof lib === 'function'
+              ? lib
+              : (lib.truthy || lib.test || lib.eval)
 
-    if (scope) {
-      return fn.bind({ value: scope })
-    }
-
-    return fn
+    return fn.bind(fn, __current__)
   }
-
-  return result
 }
