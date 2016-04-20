@@ -1,5 +1,5 @@
 module.exports = {
-  'rule1': function (value) {
+  'rule1': function(current, value) {
     if (value === 'value1') {
       return {'new-rule1': 'value-x'}
     }
@@ -18,29 +18,29 @@ module.exports = {
 
   'rule4': {
     name: 'new-rule4',
-    truthy: function (value) {
+    truthy: function(current, value) {
       return 'value4-is-' + value.substr(2)
     },
 
-    falsy: function (value) {
+    falsy: function(current, value) {
       return 'value4-isnt-' + value
     }
   },
 
   'rule5': {
     name: 'new-rule5',
-    truthy: function (value) {
+    truthy: function(current, value) {
       return 'value5-is-' + value
     },
-    
-    falsy: function (value) {
+
+    falsy: function(current, value) {
       return 'value5-isnt-' + value
     }
   },
 
   'rule6': {
     name: 'new-rule6',
-    test: function (value) {
+    eval: function(current, value) {
       return value
     }
   },
@@ -76,9 +76,9 @@ module.exports = {
 
   'extensible-rule': {
     name: 'new-rule10',
-    falsy: function () {
-      if (this.value) {
-        return ['extending', this.value]
+    falsy: function(current) {
+      if (current) {
+        return ['extending', current]
       }
 
       return 'didnt extend'

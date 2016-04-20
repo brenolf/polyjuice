@@ -246,8 +246,8 @@ rules:
   - 0
   - never
 env:
-  browser: true
   node: true
-  jquery: true
-  amd: true
-  commonjs: true
+  mocha: true
+globals:
+  caller: true
+  expect: true
