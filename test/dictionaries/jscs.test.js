@@ -612,4 +612,16 @@ describe('jscs', function () {
       }
     }])
   })
+
+  it('converts disallowArrowFunctions correctly', function () {
+    var fn = getFn('disallowArrowFunctions')
+
+    var fnBound = getFn('disallowArrowFunctions', [
+      'A', 'B'
+    ])
+
+    expect(fn('CLRF')).to.eql(['ArrowFunctionExpression'])
+
+    expect(fnBound('LF')).to.eql(['A', 'B', 'ArrowFunctionExpression'])
+  })
 })
