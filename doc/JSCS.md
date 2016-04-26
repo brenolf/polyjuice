@@ -13,6 +13,7 @@
 * `SpacesInConditionalExpression`
 * `SpacesInForStatement`
 * `SpacesInsideBrackets`
+* `MultiLineTernary`
 
 ## Disallow only
 * `disallowNamedUnassignedFunctions`
