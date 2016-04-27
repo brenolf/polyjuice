@@ -23,6 +23,7 @@
 * `disallowSpaceBeforeBinaryOperators`
 * `disallowIdenticalDestructuringNames`
 * `disallowArrayDestructuringReturn`
+* `disallowSpacesInsideTemplateStringPlaceholders`
 
 ## Require only
 * `requireAnonymousFunctions`
@@ -32,6 +33,10 @@
 * `requireNumericLiterals`
 * `requireShorthandArrowFunctions`
 * `requireSpacesInCallExpression`
+* `requireNewlineBeforeSingleStatementsInIf`
+* `requireSpaceBeforeDestructuredValues`
+* `requireArrayDestructuring`
+* `requireObjectDestructuring`
 
 ## Validation
 * `maximumNumberOfLines`
