@@ -22,6 +22,7 @@
 * `disallowSpaceAfterBinaryOperators`
 * `disallowSpaceBeforeBinaryOperators`
 * `disallowIdenticalDestructuringNames`
+* `disallowArrayDestructuringReturn`
 
 ## Require only
 * `requireAnonymousFunctions`
