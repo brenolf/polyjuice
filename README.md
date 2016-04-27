@@ -58,7 +58,7 @@ Contributions are always welcome! If you want to have a better understanding abo
 ## Versions used
 These are the versions used as source of the translation. Therefore, you may expect all rules up to those versions to have been mapped to the target tool.
 
-* ESLInt: `v1.7.2`
+* ESLint: `v1.7.2`
 * JSCS: `v3.0.2`
 * JSHint: `v2.9.2`
 
