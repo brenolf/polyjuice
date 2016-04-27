@@ -14,6 +14,7 @@
 * `SpacesInForStatement`
 * `SpacesInsideBrackets`
 * `MultiLineTernary`
+* `SpacesInsideImportedObjectBraces`
 
 ## Disallow only
 * `disallowNamedUnassignedFunctions`
