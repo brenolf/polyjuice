@@ -56,11 +56,11 @@ You must provide the file to be assessed by using the option `--eslint` and also
 Contributions are always welcome! If you want to have a better understanding about the conversion files, I encourage you to take a look at [the conversion page](/doc/DICTIONARIES.md). You can also check the rules discarded when [parsing JSCS](/doc/JSCS.md), [parsing JSHint](/doc/JSHINT.md) and [parsing ESLint](/doc/ESLINT.md).
 
 ## Versions used
-This are the versions used for the most of the rules. As time went by, new rules were added and fixed, which means these versions could be slightly different.
+These are the versions used as source of the translation. Therefore, you may expect all rules up to those versions to have been mapped to the target tool.
 
 * ESLInt: `v1.7.2`
-* JSCS: `v2.0.0`
-* JSHint: `v2.8.0`
+* JSCS: `v3.0.2`
+* JSHint: `v2.9.2`
 
 ## License
 MIT
