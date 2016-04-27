@@ -21,6 +21,7 @@
 * `disallowNotOperatorsInConditionals`
 * `disallowSpaceAfterBinaryOperators`
 * `disallowSpaceBeforeBinaryOperators`
+* `disallowIdenticalDestructuringNames`
 
 ## Require only
 * `requireAnonymousFunctions`
