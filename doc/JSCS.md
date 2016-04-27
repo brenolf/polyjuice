@@ -43,3 +43,4 @@
 * `validateAlignedFunctionParameters`
 * `validateNewlineAfterArrayElements`
 * `validateParameterSeparator`
+* `validateOrderInObjectKeys`
