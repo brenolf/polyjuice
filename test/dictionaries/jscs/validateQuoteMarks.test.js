@@ -26,7 +26,7 @@ describe('jscs#validateQuoteMarks', function() {
     expect(fn('\'')).to.eql([2, 'single'])
 
     expect(fn({ 'mark': '"', 'escape': true })).to.eql(
-      [2, 'double', 'avoid-escape']
+      [2, 'double', { avoidEscape: true }]
     )
 
     expect(fn({ 'mark': '"', 'escape': false })).to.eql(

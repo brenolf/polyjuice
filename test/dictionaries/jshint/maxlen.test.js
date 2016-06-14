@@ -19,6 +19,9 @@ describe('jshint#maxlen', function() {
   it('converts the rule correctly', function() {
     var fn = getFn()
 
-    expect(fn(42)).to.eql([2, 42])
+    expect(fn(42)).to.eql([2, {
+      code: 42,
+      ignoreComments: true
+    }])
   })
 })
