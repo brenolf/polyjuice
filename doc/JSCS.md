@@ -38,6 +38,8 @@
 * `requireSpaceBeforeDestructuredValues`
 * `requireArrayDestructuring`
 * `requireObjectDestructuring`
+* `requireCapitalizedConstructors`
+* `requireLineBreakAfterVariableAssignment`
 
 ## Validation
 * `maximumNumberOfLines`
