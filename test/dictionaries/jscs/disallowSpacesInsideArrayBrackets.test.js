@@ -20,13 +20,12 @@ describe('jscs#disallowSpacesInsideArrayBrackets', function() {
     var fn = getFn()
     var fnBound = getFn([2, 'never', {}])
 
-    expect(fn(true)).to.eql([2, 'never', {'singleValue': true}])
+    expect(fn(true)).to.eql([2, 'never', {}])
 
     expect(fn('nested')).to.eql([2, 'never', {
-      'singleValue': true,
       'arraysInArrays': true
     }])
 
-    expect(fnBound()).to.eql([2, 'never', {'singleValue': true}])
+    expect(fnBound()).to.eql([2, 'never', {}])
   })
 })
