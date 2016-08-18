@@ -20,7 +20,7 @@ describe('jscs#disallowImplicitTypeConversion', function() {
     var fn = getFn()
 
     expect(fn(['numeric'])).to.eql(
-      [2, { number: true }]
+      [2, { number: true, string: false, boolean: false }]
     )
   })
 })
