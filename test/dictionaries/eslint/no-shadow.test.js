@@ -19,8 +19,8 @@ describe('eslint#no-shadow', function() {
   it('converts the rule correctly', function() {
     var fn = getFn()
 
-    expect(fn(2)).to.eql({ shadow: false })
-    expect(fn(0)).to.eql({ shadow: true })
-    expect(fn([2, {}])).to.eql({ shadow: 'outer' })
+    expect(fn(2)).to.eql(false)
+    expect(fn(0)).to.eql(true)
+    expect(fn([2, {}])).to.eql('outer')
   })
 })
