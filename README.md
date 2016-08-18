@@ -22,19 +22,19 @@ Polyjuice is a utility that converts [JSHint](http://jshint.com/) and [JSCS](htt
 var polyjuice = require('polyjuice')
 
 var to_eslint = {
-  jshint: polyjuice.from.jshint('./.jshintrc'),
-  jscs  : polyjuice.from.jscs('./.jscsrc'),
-  both  : polyjuice.to.eslint('./.jshintrc', './.jscsrc')
+  jshint: polyjuice.from.jshint(['./.jshintrc']),
+  jscs  : polyjuice.from.jscs(['./.jscsrc']),
+  both  : polyjuice.to.eslint(['./.jshintrc'], ['./.jscsrc'])
 }
 
 var to_jscs_and_jshint = {
-  jshint: polyjuice.to.jshint('./.eslintrc'),
-  jscs  : polyjuice.to.jscs('./.eslintrc'),
-  both  : polyjuice.from.eslint('./.eslintrc')
+  jshint: polyjuice.to.jshint(['./.eslintrc')],
+  jscs  : polyjuice.to.jscs(['./.eslintrc')],
+  both  : polyjuice.from.eslint(['./.eslintrc'])
 }
 ```
 
-**Note**: When using `polyjuice.from.eslint` an object with keys `jscs` and `jshint` is returned.
+> When using `polyjuice.from.eslint` an object with keys `jscs` and `jshint` is returned.
 
 ## CLI
 
@@ -46,11 +46,15 @@ You must provide the files to be assessed by using the options `--jshint` and `-
 
 `$ polyjuice --jshint .jshintrc --jscs .jscsrc > .eslintrc`
 
+> Note you are allowed to pass in any number of files
+
 ### To JSHint and JSCS
 
 You must provide the file to be assessed by using the option `--eslint` and also which output you want by using either `--to-jshint` or `--to-jscs`, for instance:
 
 `$ polyjuice --eslint .eslintrc --to-jshint > .jshintrc`
+
+> Note you are allowed to pass in any number of files
 
 ## Contributing
 Contributions are always welcome! If you want to have a better understanding about the conversion files, I encourage you to take a look at [the conversion page](/doc/DICTIONARIES.md). You can also check the rules discarded when [parsing JSCS](/doc/JSCS.md), [parsing JSHint](/doc/JSHINT.md) and [parsing ESLint](/doc/ESLINT.md).
