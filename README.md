@@ -1,9 +1,5 @@
 <h1 align="center">
-	<br>
-	<img width="500" src="./logo.png" alt="Polyjuice">
-	<br>
-	<br>
-	<br>
+	<img width="320" src="./logo.png" alt="Polyjuice">
 </h1>
 
 [![Build Status](https://travis-ci.org/brenolf/polyjuice.svg)](https://travis-ci.org/brenolf/polyjuice)
