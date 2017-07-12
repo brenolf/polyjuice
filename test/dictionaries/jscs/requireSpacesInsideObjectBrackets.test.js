@@ -27,6 +27,10 @@ describe('jscs#requireSpacesInsideObjectBrackets', function() {
       [2, 'always', { 'objectsInArrays': false }]
     )
 
+    expect(fn('allButNested')).to.eql(
+      [2, 'always', { 'objectsInArrays': false }]
+    )
+
     expect(fn({ 'allExcept': ['['] })).to.eql(
       [2, 'always', { 'arraysInArrays': false }]
     )
