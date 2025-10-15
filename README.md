@@ -1,6 +1,9 @@
 <h1 align="center">
-	<img width="320" src="https://cdn.rawgit.com/brenolf/polyjuice/master/logo.svg" alt="Polyjuice">
+	<img width="370" src="https://github.com/user-attachments/assets/6a451e8b-070a-483b-a45b-ddbf24af9344" alt="Polyjuice">
 </h1>
+
+> [!WARNING]
+> This package is not maintained anymore. JSCS was merged to ESLint in 2016 which has become more industry standard and a tool like this is not needed any longer.
 
 [![Build Status](https://travis-ci.org/brenolf/polyjuice.svg)](https://travis-ci.org/brenolf/polyjuice)
 [![Coverage Status](https://coveralls.io/repos/brenolf/polyjuice/badge.svg?branch=master&service=github)](https://coveralls.io/github/brenolf/polyjuice?branch=master)
